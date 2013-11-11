@@ -634,7 +634,6 @@
 				INFOPLIST_FILE = "ShortcutRecorder-Info.plist";
 				INSTALL_PATH = "@rpath";
 				PRODUCT_NAME = ShortcutRecorder;
-				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -652,7 +651,6 @@
 				INFOPLIST_FILE = "ShortcutRecorder-Info.plist";
 				INSTALL_PATH = "@rpath";
 				PRODUCT_NAME = ShortcutRecorder;
-				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
