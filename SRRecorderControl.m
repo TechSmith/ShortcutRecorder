@@ -35,7 +35,7 @@ static const CGFloat _SRRecorderControlHeight = 25.0;
 
 static const CGFloat _SRRecorderControlBottomShadowHeightInPixels = 1.0;
 
-static const CGFloat _SRRecorderControlBaselineOffset = 5.0;
+//static const CGFloat _SRRecorderControlBaselineOffset = 5.0;
 
 
 // Clear Button Layout Constants
@@ -380,7 +380,7 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
             label = self.stringValue;
 
         if (![label length])
-            label = label = SRLoc(@"Type shortcut");
+            label = SRLoc(@"Type shortcut");
     }
     else
     {
