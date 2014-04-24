@@ -139,7 +139,7 @@
 		E273122E1349EC9000A84433 /* PTHotKey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PTHotKey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E273122F1349EC9000A84433 /* PTHotKey-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PTHotKey-Info.plist"; sourceTree = SOURCE_ROOT; };
 		E273124B1349EE6500A84433 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
-		E2741AC41673C79F00A139BD /* en */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ShortcutRecorder.strings; sourceTree = "<group>"; };
+		E2741AC41673C79F00A139BD /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ShortcutRecorder.strings; sourceTree = "<group>"; };
 		E2741AC61673C7A400A139BD /* de */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/ShortcutRecorder.strings; sourceTree = "<group>"; };
 		E2741AC71673C7A600A139BD /* el */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/ShortcutRecorder.strings; sourceTree = "<group>"; };
 		E2741AC81673C7A800A139BD /* fr */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/ShortcutRecorder.strings; sourceTree = "<group>"; };
