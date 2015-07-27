@@ -1096,8 +1096,11 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
         _mouseTrackingButtonTag = _SRRecorderControlMainButtonTag;
         [self setNeedsDisplay:YES];
     }
-
-    [super mouseDown:anEvent];
+    else
+    {
+      [super mouseDown:anEvent];
+    }
+   
 }
 
 - (void)mouseUp:(NSEvent *)anEvent
