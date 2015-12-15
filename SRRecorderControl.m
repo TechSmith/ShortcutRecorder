@@ -113,6 +113,8 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
     NSToolTipTag _snapBackButtonToolTipTag;
 
     NSMutableDictionary *_bindingInfo;
+   
+   BOOL _shouldDrawBackground;
 }
 
 - (instancetype)initWithFrame:(NSRect)aFrameRect
@@ -470,10 +472,16 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
         p.alignment = NSCenterTextAlignment;
         p.lineBreakMode = NSLineBreakByTruncatingTail;
         p.baseWritingDirection = NSWritingDirectionLeftToRight;
+       
+       if ( !self.labelColor )
+       {
+          _labelColor = [NSColor controlTextColor];
+       }
+       
         NormalAttributes = @{
             NSParagraphStyleAttributeName: [p copy],
             NSFontAttributeName: [NSFont labelFontOfSize:[NSFont systemFontSize]],
-            NSForegroundColorAttributeName: [NSColor controlTextColor]
+            NSForegroundColorAttributeName:_labelColor
         };
     });
     return NormalAttributes;
@@ -896,7 +904,11 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
 
 - (void)drawRect:(NSRect)aDirtyRect
 {
-    [self drawBackground:aDirtyRect];
+   if (_shouldDrawBackground || !_borderlessButton)
+   {
+      [self drawBackground:aDirtyRect];
+   }
+   
     [self drawInterior:aDirtyRect];
 
     if (floor(NSAppKitVersionNumber) <= NSAppKitVersionNumber10_6)
@@ -952,8 +964,11 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
 
 - (void)updateTrackingAreas
 {
-    static const NSUInteger TrackingOptions = NSTrackingMouseEnteredAndExited | NSTrackingActiveWhenFirstResponder | NSTrackingEnabledDuringMouseDrag;
-
+    NSUInteger TrackingOptions = NSTrackingMouseEnteredAndExited | NSTrackingActiveWhenFirstResponder | NSTrackingEnabledDuringMouseDrag;
+   
+   if (_borderlessButton)
+      TrackingOptions = NSTrackingMouseEnteredAndExited | NSTrackingActiveAlways | NSTrackingEnabledDuringMouseDrag;
+   
     if (_mainButtonTrackingArea)
         [self removeTrackingArea:_mainButtonTrackingArea];
 
@@ -1087,8 +1102,11 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
         _mouseTrackingButtonTag = _SRRecorderControlMainButtonTag;
         [self setNeedsDisplay:YES];
     }
-
-    [super mouseDown:anEvent];
+    else
+    {
+      [super mouseDown:anEvent];
+    }
+   
 }
 
 - (void)mouseUp:(NSEvent *)anEvent
@@ -1129,6 +1147,12 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
 
 - (void)mouseEntered:(NSEvent *)anEvent
 {
+   if (_borderlessButton)
+   {
+      _shouldDrawBackground = YES;
+      [self setNeedsDisplay:YES];
+   }
+   
     if ((_mouseTrackingButtonTag == _SRRecorderControlMainButtonTag && anEvent.trackingArea == _mainButtonTrackingArea) ||
         (_mouseTrackingButtonTag == _SRRecorderControlSnapBackButtonTag && anEvent.trackingArea == _snapBackButtonTrackingArea) ||
         (_mouseTrackingButtonTag == _SRRecorderControlClearButtonTag && anEvent.trackingArea == _clearButtonTrackingArea))
@@ -1141,6 +1165,12 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
 
 - (void)mouseExited:(NSEvent *)anEvent
 {
+   if (_borderlessButton)
+   {
+      _shouldDrawBackground = NO;
+      [self setNeedsDisplay:YES];
+   }
+   
     if ((_mouseTrackingButtonTag == _SRRecorderControlMainButtonTag && anEvent.trackingArea == _mainButtonTrackingArea) ||
         (_mouseTrackingButtonTag == _SRRecorderControlSnapBackButtonTag && anEvent.trackingArea == _snapBackButtonTrackingArea) ||
         (_mouseTrackingButtonTag == _SRRecorderControlClearButtonTag && anEvent.trackingArea == _clearButtonTrackingArea))
