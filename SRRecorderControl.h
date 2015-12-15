@@ -132,8 +132,9 @@ extern NSString *const SRShortcutCharactersIgnoringModifiers;
  */
 @property (nonatomic, copy) NSDictionary *objectValue;
 
-
 @property BOOL borderlessButton;
+
+@property (nonatomic, copy) NSColor* labelColor;
 
 /*!
     @brief      Configures recording behavior of the control.

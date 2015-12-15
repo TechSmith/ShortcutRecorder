@@ -472,10 +472,16 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
         p.alignment = NSCenterTextAlignment;
         p.lineBreakMode = NSLineBreakByTruncatingTail;
         p.baseWritingDirection = NSWritingDirectionLeftToRight;
+       
+       if ( !self.labelColor )
+       {
+          _labelColor = [NSColor controlTextColor];
+       }
+       
         NormalAttributes = @{
             NSParagraphStyleAttributeName: [p copy],
             NSFontAttributeName: [NSFont labelFontOfSize:[NSFont systemFontSize]],
-            NSForegroundColorAttributeName: [NSColor controlTextColor]
+            NSForegroundColorAttributeName:_labelColor
         };
     });
     return NormalAttributes;
