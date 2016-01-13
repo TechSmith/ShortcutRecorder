@@ -467,23 +467,24 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
 {
     static dispatch_once_t OnceToken;
     static NSDictionary *NormalAttributes = nil;
+    static NSMutableParagraphStyle *p = nil;
     dispatch_once(&OnceToken, ^{
-        NSMutableParagraphStyle *p = [[NSMutableParagraphStyle alloc] init];
+        p = [[NSMutableParagraphStyle alloc] init];
         p.alignment = NSCenterTextAlignment;
         p.lineBreakMode = NSLineBreakByTruncatingTail;
         p.baseWritingDirection = NSWritingDirectionLeftToRight;
-       
-       if ( !self.labelColor )
-       {
-          _labelColor = [NSColor controlTextColor];
-       }
-       
-        NormalAttributes = @{
-            NSParagraphStyleAttributeName: [p copy],
-            NSFontAttributeName: [NSFont labelFontOfSize:[NSFont systemFontSize]],
-            NSForegroundColorAttributeName:_labelColor
-        };
     });
+   
+    if ( !self.labelColor )
+    {
+        _labelColor = [NSColor controlTextColor];
+    }
+   
+    NormalAttributes = @{
+                        NSParagraphStyleAttributeName: p,
+                        NSFontAttributeName: [NSFont labelFontOfSize:[NSFont systemFontSize]],
+                        NSForegroundColorAttributeName:_labelColor
+                        };
     return NormalAttributes;
 }
 
