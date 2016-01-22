@@ -132,6 +132,7 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
         _mouseTrackingButtonTag = _SRRecorderControlInvalidButtonTag;
         _snapBackButtonToolTipTag = NSIntegerMax;
         _bindingInfo = [NSMutableDictionary dictionary];
+        _fontSize = 12.0;
 
         if (floor(NSAppKitVersionNumber) > NSAppKitVersionNumber10_6)
         {
@@ -482,7 +483,7 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
    
     NormalAttributes = @{
                         NSParagraphStyleAttributeName: p,
-                        NSFontAttributeName: [NSFont labelFontOfSize:[NSFont systemFontSize]],
+                        NSFontAttributeName: [NSFont labelFontOfSize:self.fontSize],
                         NSForegroundColorAttributeName:_labelColor
                         };
     return NormalAttributes;
@@ -499,7 +500,7 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
         p.baseWritingDirection = NSWritingDirectionLeftToRight;
         RecordingAttributes = @{
             NSParagraphStyleAttributeName: [p copy],
-            NSFontAttributeName: [NSFont labelFontOfSize:[NSFont systemFontSize]],
+            NSFontAttributeName: [NSFont labelFontOfSize:self.fontSize],
             NSForegroundColorAttributeName: [NSColor disabledControlTextColor]
         };
     });

@@ -136,6 +136,8 @@ extern NSString *const SRShortcutCharactersIgnoringModifiers;
 
 @property BOOL borderlessButton;
 
+@property float fontSize;
+
 /*!
     @brief      Configures recording behavior of the control.
 
