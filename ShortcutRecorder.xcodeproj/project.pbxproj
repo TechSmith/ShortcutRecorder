@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A85A3561E82EFFE00089565 /* PTKeyCodes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A85A3551E82EFFE00089565 /* PTKeyCodes.plist */; };
+		5A85A3571E82F00F00089565 /* PTKeyCodes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A85A3551E82EFFE00089565 /* PTKeyCodes.plist */; };
 		939837950DA429EC007F53F3 /* SRRecorderControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E29C109CDB9360085E9ED /* SRRecorderControl.m */; };
 		939837980DA429EC007F53F3 /* SRKeyCodeTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C3670D0A246B4900B69171 /* SRKeyCodeTransformer.m */; };
 		939837990DA429EC007F53F3 /* SRValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C3670F0A246B4900B69171 /* SRValidator.m */; };
@@ -92,6 +94,7 @@
 		0B8E2A0709CDBADE0085E9ED /* PTKeyCombo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTKeyCombo.h; sourceTree = "<group>"; };
 		0B8E2A0809CDBADE0085E9ED /* PTKeyCombo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTKeyCombo.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* ShortcutRecorder_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShortcutRecorder_Prefix.pch; sourceTree = "<group>"; };
+		5A85A3551E82EFFE00089565 /* PTKeyCodes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PTKeyCodes.plist; sourceTree = SOURCE_ROOT; };
 		74C3670C0A246B4900B69171 /* SRKeyCodeTransformer.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = SRKeyCodeTransformer.h; sourceTree = "<group>"; };
 		74C3670D0A246B4900B69171 /* SRKeyCodeTransformer.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = SRKeyCodeTransformer.m; sourceTree = "<group>"; };
 		74C3670E0A246B4900B69171 /* SRValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRValidator.h; sourceTree = "<group>"; };
@@ -330,6 +333,7 @@
 		BA10595C1689CEBF00A3DDF5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5A85A3551E82EFFE00089565 /* PTKeyCodes.plist */,
 				A51A2CAD1C9734D0007E9BF4 /* Localizable.strings */,
 				A51A2CA81C9734CF007E9BF4 /* PTHotKey-InfoPlist.strings */,
 				E273122F1349EC9000A84433 /* PTHotKey-Info.plist */,
@@ -508,6 +512,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A85A3571E82F00F00089565 /* PTKeyCodes.plist in Resources */,
 				A51A2CA61C9734CF007E9BF4 /* PTHotKey-InfoPlist.strings in Resources */,
 				A51A2CAB1C9734D0007E9BF4 /* Localizable.strings in Resources */,
 			);
@@ -542,6 +547,7 @@
 				E225E47A1679E30E00A00529 /* shortcut-recorder-bezel-left@2x.png in Resources */,
 				E225E47B1679E30E00A00529 /* shortcut-recorder-bezel-middle.png in Resources */,
 				E225E47C1679E30E00A00529 /* shortcut-recorder-bezel-middle@2x.png in Resources */,
+				5A85A3561E82EFFE00089565 /* PTKeyCodes.plist in Resources */,
 				E225E47D1679E30E00A00529 /* shortcut-recorder-bezel-right.png in Resources */,
 				E225E47E1679E30E00A00529 /* shortcut-recorder-bezel-right@2x.png in Resources */,
 				E225E47F1679E30E00A00529 /* shortcut-recorder-clear-highlighted.png in Resources */,
