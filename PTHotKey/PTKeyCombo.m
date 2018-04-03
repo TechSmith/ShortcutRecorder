@@ -264,7 +264,7 @@
 	}
 	else
 	{
-		desc = NSLocalizedString( @"(None)", @"Hot Keys: Key Combo text for 'empty' combo" );
+      desc = @"(None)";
 	}
 
 	return desc;
