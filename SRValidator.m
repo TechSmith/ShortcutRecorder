@@ -164,11 +164,11 @@
     NSString *keyCodeCurrentLayoutRepresentation = [[SRKeyCodeTransformer sharedTransformer] transformedValue:@(aKeyCode)];
 
     // Shift flag may be set implicitly in key equivalent.
-    NSUInteger flagsWithoutShift = aFlags & ~NSShiftKeyMask;
+   NSUInteger flagsWithoutShift = aFlags & ~NSEventModifierFlagShift;
     NSString *keyCodeASCIIShiftedRepresentation = [[SRKeyCodeTransformer sharedASCIITransformer] transformedValue:@(aKeyCode)
-                                                                                                withModifierFlags:@(NSShiftKeyMask)];
+                                                                                                withModifierFlags:@(NSEventModifierFlagShift)];
     NSString *keyCodeCurrentLayoutShiftedRepresentation = [[SRKeyCodeTransformer sharedTransformer] transformedValue:@(aKeyCode)
-                                                                                                   withModifierFlags:@(NSShiftKeyMask)];
+                                                                                                   withModifierFlags:@(NSEventModifierFlagShift)];
 
     for (NSMenuItem *menuItem in [aMenu itemArray])
     {
@@ -184,8 +184,8 @@
 
         if ((keyEquivalentModifierMask == aFlags && [keyEquivalent isEqualToString:keyCodeASCIIRepresentation]) ||
             (keyEquivalentModifierMask == aFlags && [keyEquivalent isEqualToString:keyCodeCurrentLayoutRepresentation]) ||
-            (aFlags & NSShiftKeyMask && keyEquivalentModifierMask == flagsWithoutShift && [keyEquivalent isEqualToString:keyCodeASCIIShiftedRepresentation]) ||
-            (aFlags & NSShiftKeyMask && keyEquivalentModifierMask == flagsWithoutShift && [keyEquivalent isEqualToString:keyCodeCurrentLayoutShiftedRepresentation]))
+            (aFlags & NSEventModifierFlagShift && keyEquivalentModifierMask == flagsWithoutShift && [keyEquivalent isEqualToString:keyCodeASCIIShiftedRepresentation]) ||
+            (aFlags & NSEventModifierFlagShift && keyEquivalentModifierMask == flagsWithoutShift && [keyEquivalent isEqualToString:keyCodeCurrentLayoutShiftedRepresentation]))
         {
             if (outError)
             {

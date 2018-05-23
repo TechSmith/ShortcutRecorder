@@ -471,7 +471,7 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
     static NSMutableParagraphStyle *p = nil;
     dispatch_once(&OnceToken, ^{
         p = [[NSMutableParagraphStyle alloc] init];
-        p.alignment = NSCenterTextAlignment;
+       p.alignment = NSTextAlignmentCenter;
         p.lineBreakMode = NSLineBreakByTruncatingTail;
         p.baseWritingDirection = NSWritingDirectionLeftToRight;
     });
@@ -495,7 +495,7 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
     static NSDictionary *RecordingAttributes = nil;
     dispatch_once(&OnceToken, ^{
         NSMutableParagraphStyle *p = [[NSMutableParagraphStyle alloc] init];
-        p.alignment = NSCenterTextAlignment;
+       p.alignment = NSTextAlignmentCenter;
         p.lineBreakMode = NSLineBreakByTruncatingTail;
         p.baseWritingDirection = NSWritingDirectionLeftToRight;
         RecordingAttributes = @{
@@ -524,7 +524,7 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
                              _SRImages[4],
                              _SRImages[5],
                              NO,
-                             NSCompositeSourceOver,
+                             NSCompositingOperationSourceOver,
                              1.0,
                              self.isFlipped);
     }
@@ -539,7 +539,7 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
                                      _SRImages[1],
                                      _SRImages[2],
                                      NO,
-                                     NSCompositeSourceOver,
+                                     NSCompositingOperationSourceOver,
                                      1.0,
                                      self.isFlipped);
             }
@@ -550,7 +550,7 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
                                      _SRImages[7],
                                      _SRImages[8],
                                      NO,
-                                     NSCompositeSourceOver,
+                                     NSCompositingOperationSourceOver,
                                      1.0,
                                      self.isFlipped);
             }
@@ -562,7 +562,7 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
                                  _SRImages[10],
                                  _SRImages[11],
                                  NO,
-                                 NSCompositeSourceOver,
+                                 NSCompositingOperationSourceOver,
                                  1.0,
                                  self.isFlipped);
         }
@@ -613,14 +613,14 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
     {
         [_SRImages[14] drawInRect:imageRect
                          fromRect:NSZeroRect
-                        operation:NSCompositeSourceOver
+                        operation:NSCompositingOperationSourceOver
                          fraction:1.0];
     }
     else
     {
         [_SRImages[15] drawInRect:imageRect
                          fromRect:NSZeroRect
-                        operation:NSCompositeSourceOver
+                        operation:NSCompositingOperationSourceOver
                          fraction:1.0];
     }
 
@@ -650,14 +650,14 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
     {
         [_SRImages[12] drawInRect:imageRect
                          fromRect:NSZeroRect
-                        operation:NSCompositeSourceOver
+                        operation:NSCompositingOperationSourceOver
                          fraction:1.0];
     }
     else
     {
         [_SRImages[13] drawInRect:imageRect
                          fromRect:NSZeroRect
-                        operation:NSCompositeSourceOver
+                        operation:NSCompositingOperationSourceOver
                          fraction:1.0];
     }
 
