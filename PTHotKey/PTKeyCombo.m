@@ -49,7 +49,7 @@
             case kVK_F18:
             case kVK_F19:
             case kVK_F20:
-                mModifiers = modifiers | NSFunctionKeyMask;
+              mModifiers = modifiers | NSEventModifierFlagFunction;
                 break;
             default:
                 mModifiers = modifiers;
@@ -234,10 +234,10 @@
 
 	static NSUInteger modToChar[4][2] =
 	{
-		{ cmdKey, 		NSCommandKeyMask },
-		{ optionKey,	NSAlternateKeyMask },
-		{ controlKey,	NSControlKeyMask },
-		{ shiftKey,		NSShiftKeyMask }
+      { cmdKey, 		NSEventModifierFlagCommand },
+      { optionKey,	NSEventModifierFlagOption },
+      { controlKey,	NSEventModifierFlagControl },
+      { shiftKey,		NSEventModifierFlagShift }
 	};
 
     NSUInteger i, ret = 0;
