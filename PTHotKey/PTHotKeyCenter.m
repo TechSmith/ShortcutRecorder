@@ -212,7 +212,7 @@ static PTHotKeyCenter *_sharedHotKeyCenter = nil;
 	short subType;
 	EventHotKeyRef carbonHotKey;
 
-	if( [event type] == NSSystemDefined )
+	if( [event type] == NSEventTypeSystemDefined )
 	{
 		subType = [event subtype];
 
