@@ -450,6 +450,10 @@
 				German,
 				infoplist.strings,
 				zh,
+				de,
+				en,
+				fr,
+				ja,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* ShortcutRecorder */;
 			projectDirPath = "";
