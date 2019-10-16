@@ -26,10 +26,18 @@ NSString *SRReadableStringForCocoaModifierFlagsAndKeyCode(NSUInteger aModifierFl
         c = [c uppercaseString];
 
     return [NSString stringWithFormat:@"%@%@%@%@%@",
-            (aModifierFlags & NSEventModifierFlagCommand ? SRLoc(@"Command-") : @""),
-            (aModifierFlags & NSEventModifierFlagOption ? SRLoc(@"Option-") : @""),
-            (aModifierFlags & NSEventModifierFlagControl ? SRLoc(@"Control-") : @""),
-            (aModifierFlags & NSEventModifierFlagShift ? SRLoc(@"Shift-") : @""),
+            (aModifierFlags & NSEventModifierFlagCommand ? NSLocalizedStringFromTable(@"Command-",
+                                                                                      @"ShortcutRecorder",
+                                                                                      nil) : @""),
+            (aModifierFlags & NSEventModifierFlagOption ? NSLocalizedStringFromTable(@"Option-",
+                                                                                     @"ShortcutRecorder",
+                                                                                     nil) : @""),
+            (aModifierFlags & NSEventModifierFlagControl ? NSLocalizedStringFromTable(@"Control-",
+                                                                                      @"ShortcutRecorder",
+                                                                                      nil) : @""),
+            (aModifierFlags & NSEventModifierFlagShift ? NSLocalizedStringFromTable(@"Shift-",
+                                                                                    @"ShortcutRecorder",
+                                                                                    nil) : @""),
                                       c];
 }
 
@@ -43,9 +51,17 @@ NSString *SRReadableASCIIStringForCocoaModifierFlagsAndKeyCode(NSUInteger aModif
         c = [c uppercaseString];
 
     return [NSString stringWithFormat:@"%@%@%@%@%@",
-            (aModifierFlags & NSEventModifierFlagCommand ? SRLoc(@"Command-") : @""),
-            (aModifierFlags & NSEventModifierFlagOption ? SRLoc(@"Option-") : @""),
-            (aModifierFlags & NSEventModifierFlagControl ? SRLoc(@"Control-") : @""),
-            (aModifierFlags & NSEventModifierFlagShift ? SRLoc(@"Shift-") : @""),
+            (aModifierFlags & NSEventModifierFlagCommand ? NSLocalizedStringFromTable(@"Command-",
+                                                                                      @"ShortcutRecorder",
+                                                                                      nil) : @""),
+            (aModifierFlags & NSEventModifierFlagOption ? NSLocalizedStringFromTable(@"Option-",
+                                                                                     @"ShortcutRecorder",
+                                                                                     nil) : @""),
+            (aModifierFlags & NSEventModifierFlagControl ? NSLocalizedStringFromTable(@"Control-",
+                                                                                      @"ShortcutRecorder",
+                                                                                      nil) : @""),
+            (aModifierFlags & NSEventModifierFlagShift ? NSLocalizedStringFromTable(@"Shift-",
+                                                                                    @"ShortcutRecorder",
+                                                                                    nil) : @""),
             c];
 }

@@ -83,10 +83,14 @@
 
                 NSString *shortcut = isASCIIOnly ? SRReadableASCIIStringForCocoaModifierFlagsAndKeyCode(aFlags, aKeyCode) : SRReadableStringForCocoaModifierFlagsAndKeyCode(aFlags, aKeyCode);
                 NSString *failureReason = [NSString stringWithFormat:
-                                           SRLoc(@"The key combination \"%@\" can't be used!"),
+                                           NSLocalizedStringFromTable(@"The key combination \"%@\" can't be used!",
+                                                                      @"ShortcutRecorder",
+                                                                      nil),
                                            shortcut];
                 NSString *description = [NSString stringWithFormat:
-                                         SRLoc(@"The key combination \"%@\" can't be used because %@."),
+                                         NSLocalizedStringFromTable(@"The key combination \"%@\" can't be used because %@.",
+                                                                    @"ShortcutRecorder",
+                                                                    nil),
                                          shortcut,
                                          [delegateReason length] ? delegateReason : @"it's already used"];
                 NSDictionary *userInfo = @{
@@ -137,10 +141,14 @@
 
                     NSString *shortcut = isASCIIOnly ? SRReadableASCIIStringForCocoaModifierFlagsAndKeyCode(aFlags, aKeyCode) : SRReadableStringForCocoaModifierFlagsAndKeyCode(aFlags, aKeyCode);
                     NSString *failureReason = [NSString stringWithFormat:
-                                               SRLoc(@"The key combination \"%@\" can't be used!"),
+                                               NSLocalizedStringFromTable(@"The key combination \"%@\" can't be used!",
+                                                                          @"ShortcutRecorder",
+                                                                          nil),
                                                shortcut];
                     NSString *description = [NSString stringWithFormat:
-                                             SRLoc(@"The key combination \"%@\" can't be used because it's already used by a system-wide keyboard shortcut. If you really want to use this key combination, most shortcuts can be changed in the Keyboard panel in System Preferences."),
+                                             NSLocalizedStringFromTable(@"The key combination \"%@\" can't be used because it's already used by a system-wide keyboard shortcut. If you really want to use this key combination, most shortcuts can be changed in the Keyboard panel in System Preferences.",
+                                                                        @"ShortcutRecorder",
+                                                                        nil),
                                              shortcut];
                     NSDictionary *userInfo = @{
                         NSLocalizedFailureReasonErrorKey: failureReason,
@@ -196,10 +204,14 @@
 
                 NSString *shortcut = isASCIIOnly ? SRReadableASCIIStringForCocoaModifierFlagsAndKeyCode(aFlags, aKeyCode) : SRReadableStringForCocoaModifierFlagsAndKeyCode(aFlags, aKeyCode);
                 NSString *failureReason = [NSString stringWithFormat:
-                                           SRLoc(@"The key combination \"%@\" can't be used!"),
+                                           NSLocalizedStringFromTable(@"The key combination \"%@\" can't be used!",
+                                                                      @"ShortcutRecorder",
+                                                                      nil),
                                            shortcut];
                 NSString *description = [NSString stringWithFormat:
-                                         SRLoc(@"The key combination \"%@\" can't be used because it's already used by the menu item \"%@\"."),
+                                         NSLocalizedStringFromTable(@"The key combination \"%@\" can't be used because it's already used by the menu item \"%@\".",
+                                                                    @"ShortcutRecorder",
+                                                                    nil),
                                          shortcut,
                                          menuItem.SR_path];
                 NSDictionary *userInfo = @{

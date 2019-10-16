@@ -149,7 +149,9 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
                                            forOrientation:NSLayoutConstraintOrientationVertical];
         }
 
-        [self setToolTip:SRLoc(@"Click to record shortcut")];
+       [self setToolTip:NSLocalizedStringFromTable(@"Click to record shortcut",
+                                                   @"ShortcutRecorder",
+                                                   nil)];
         [self updateTrackingAreas];
     }
 
@@ -230,7 +232,9 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
     [self didChangeValueForKey:@"isRecording"];
 
     [self updateTrackingAreas];
-    [self setToolTip:SRLoc(@"Type shortcut")];
+   [self setToolTip:NSLocalizedStringFromTable(@"Type shortcut",
+                                               @"ShortcutRecorder",
+                                               nil)];
     NSAccessibilityPostNotification(self, NSAccessibilityTitleChangedNotification);
     return YES;
 }
@@ -274,7 +278,9 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
         self.objectValue = anObjectValue;
 
     [self updateTrackingAreas];
-    [self setToolTip:SRLoc(@"Click to record shortcut")];
+   [self setToolTip:NSLocalizedStringFromTable(@"Click to record shortcut",
+                                               @"ShortcutRecorder",
+                                               nil)];
     [self setNeedsDisplay:YES];
     NSAccessibilityPostNotification(self, NSAccessibilityTitleChangedNotification);
 
@@ -383,14 +389,18 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
             label = self.stringValue;
 
         if (![label length])
-            label = SRLoc(@"Type shortcut");
+           label = NSLocalizedStringFromTable(@"Type shortcut",
+                                              @"ShortcutRecorder",
+                                              nil);
     }
     else
     {
         label = self.stringValue;
 
         if (![label length])
-            label = SRLoc(@"Click to record shortcut");
+           label = NSLocalizedStringFromTable(@"Click to record shortcut",
+                                              @"ShortcutRecorder",
+                                              nil);
     }
 
     return label;
@@ -406,14 +416,18 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
         label = [[SRModifierFlagsTransformer sharedPlainTransformer] transformedValue:@(modifierFlags)];
 
         if (![label length])
-            label = SRLoc(@"Type shortcut");
+           label = NSLocalizedStringFromTable(@"Type shortcut",
+                                              @"ShortcutRecorder",
+                                              nil);
     }
     else
     {
         label = self.accessibilityStringValue;
 
         if (![label length])
-            label = SRLoc(@"Click to record shortcut");
+           label = NSLocalizedStringFromTable(@"Click to record shortcut",
+                                              @"ShortcutRecorder",
+                                              nil);
     }
 
     return label;
@@ -861,7 +875,9 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
 - (NSString *)view:(NSView *)aView stringForToolTip:(NSToolTipTag)aTag point:(NSPoint)aPoint userData:(void *)aData
 {
     if (aTag == _snapBackButtonToolTipTag)
-        return SRLoc(@"Use old shortcut");
+       return NSLocalizedStringFromTable(@"Use old shortcut",
+                                         @"ShortcutRecorder",
+                                         nil);
     else
         return [super view:aView stringForToolTip:aTag point:aPoint userData:aData];
 }
@@ -960,7 +976,9 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
 
 - (NSSize)intrinsicContentSize
 {
-    return NSMakeSize(NSWidth([self rectForLabel:SRLoc(@"Click to record shortcut") withAttributes:self.normalLabelAttributes]) + _SRRecorderControlShapeXRadius + _SRRecorderControlShapeXRadius,
+   return NSMakeSize(NSWidth([self rectForLabel:NSLocalizedStringFromTable(@"Click to record shortcut",
+                                                                           @"ShortcutRecorder",
+                                                                           nil) withAttributes:self.normalLabelAttributes]) + _SRRecorderControlShapeXRadius + _SRRecorderControlShapeXRadius,
                       _SRRecorderControlHeight);
 }
 

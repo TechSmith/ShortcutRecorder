@@ -78,16 +78,24 @@
         NSMutableString *s = [NSMutableString string];
 
        if (modifierFlags & NSEventModifierFlagControl)
-            [s appendString:SRLoc(@"Control-")];
+          [s appendString:NSLocalizedStringFromTable(@"Control-",
+                                                     @"ShortcutRecorder",
+                                                     nil)];
 
        if (modifierFlags & NSEventModifierFlagOption)
-            [s appendString:SRLoc(@"Option-")];
+          [s appendString:NSLocalizedStringFromTable(@"Option-",
+                                                     @"ShortcutRecorder",
+                                                     nil)];
 
        if (modifierFlags & NSEventModifierFlagShift)
-            [s appendString:SRLoc(@"Shift-")];
+          [s appendString:NSLocalizedStringFromTable(@"Shift-",
+                                                     @"ShortcutRecorder",
+                                                     nil)];
 
        if (modifierFlags & NSEventModifierFlagCommand)
-            [s appendString:SRLoc(@"Command-")];
+          [s appendString:NSLocalizedStringFromTable(@"Command-",
+                                                     @"ShortcutRecorder",
+                                                     nil)];
 
         if (s.length > 0)
             [s deleteCharactersInRange:NSMakeRange(s.length - 1, 1)];
