@@ -1,13 +1,36 @@
-﻿"Space" = "Space";
-"Use old shortcut" = "Use previous shortcut";
-"Type shortcut" = "Type shortcut";
-"Click to record shortcut" = "Add Shortcut";
-"Pad %@" = "Pad %@";
-"The key combination “%@” can't be used!" = "The key combination “%@” can't be used!";
-"The key combination “%@” can't be used because %@." = "The key combination “%@” can't be used because %@.";
-"The key combination “%@” can't be used because it's already used by a system-wide keyboard shortcut. If you really want to use this key combination, most shortcuts can be changed in the Keyboard panel in System Preferences." = "The key combination “%@” can't be used because it's already used by a system-wide keyboard shortcut. If you really want to use this key combination, most shortcuts can be changed in the Keyboard panel in System Preferences.";
-"The key combination “%@” can't be used because it's already used by the menu item “%@”." = "The key combination “%@” can't be used because it's already used by the menu item “%@”.";
-"Command-" = "Command-";
-"Option-" = "Option-";
-"Shift-" = "Shift-";
-"Control-" = "Control-";
+/* No comment provided by engineer. */
+"Click to record shortcut" = "Hier klicken, um Tastenkombination aufzuzeichnen";
+
+/* No comment provided by engineer. */
+"Command-" = "Cmd-";
+
+/* No comment provided by engineer. */
+"Control-" = "Ctrl-";
+
+/* No comment provided by engineer. */
+"Option-" = "Wahltaste-";
+
+/* No comment provided by engineer. */
+"Shift-" = "Umschalttaste-";
+
+/* No comment provided by engineer. */
+"Space" = "Leertaste";
+
+/* No comment provided by engineer. */
+"The key combination \"%@\" can't be used because %@." = "Die Tastenkombination „%1$@“ kann aus folgendem Grund nicht verwendet werden: %2$@.";
+
+/* No comment provided by engineer. */
+"The key combination \"%@\" can't be used because it's already used by a system-wide keyboard shortcut. If you really want to use this key combination, most shortcuts can be changed in the Keyboard panel in System Preferences." = "Die Tastenkombination „%@“ kann nicht verwendet werden, weil sie bereits mit einem systemweit gültigen Tastaturbefehl belegt ist. Wenn Sie trotzdem diese Tastemkombination verwenden wollen, können Sie die die meisten Tastaturbefehle in den Systemeinstellungen unter „Tastatur“ ändern.";
+
+/* No comment provided by engineer. */
+"The key combination \"%@\" can't be used because it's already used by the menu item \"%@\"." = "Die Tastenkombination „%1$@“ kann nicht verwendet werden, weil sie bereits mit dem Menüeintrag „%2$@“ belegt ist.";
+
+/* No comment provided by engineer. */
+"The key combination \"%@\" can't be used!" = "Die Tastenkombination „%@“ kann nicht verwendet werden.";
+
+/* No comment provided by engineer. */
+"Type shortcut" = "Tastenkombination eingeben";
+
+/* No comment provided by engineer. */
+"Use old shortcut" = "Alte Tastenkombination verwenden";
+

@@ -1,13 +1,36 @@
-﻿"Space" = "Space";
-"Use old shortcut" = "Use previous shortcut";
-"Type shortcut" = "Type shortcut";
-"Click to record shortcut" = "Add Shortcut";
-"Pad %@" = "Pad %@";
-"The key combination “%@” can't be used!" = "The key combination “%@” can't be used!";
-"The key combination “%@” can't be used because %@." = "The key combination “%@” can't be used because %@.";
-"The key combination “%@” can't be used because it's already used by a system-wide keyboard shortcut. If you really want to use this key combination, most shortcuts can be changed in the Keyboard panel in System Preferences." = "The key combination “%@” can't be used because it's already used by a system-wide keyboard shortcut. If you really want to use this key combination, most shortcuts can be changed in the Keyboard panel in System Preferences.";
-"The key combination “%@” can't be used because it's already used by the menu item “%@”." = "The key combination “%@” can't be used because it's already used by the menu item “%@”.";
-"Command-" = "Command-";
+/* No comment provided by engineer. */
+"Click to record shortcut" = "Cliquer pour enregistrer le raccourci";
+
+/* No comment provided by engineer. */
+"Command-" = "Commande-";
+
+/* No comment provided by engineer. */
+"Control-" = "Contrôle-";
+
+/* No comment provided by engineer. */
 "Option-" = "Option-";
-"Shift-" = "Shift-";
-"Control-" = "Control-";
+
+/* No comment provided by engineer. */
+"Shift-" = "Maj-";
+
+/* No comment provided by engineer. */
+"Space" = "Espace";
+
+/* No comment provided by engineer. */
+"The key combination \"%@\" can't be used because %@." = "La combinaison de touches « %1$@ » ne peut pas être utilisée, car %2$@.";
+
+/* No comment provided by engineer. */
+"The key combination \"%@\" can't be used because it's already used by a system-wide keyboard shortcut. If you really want to use this key combination, most shortcuts can be changed in the Keyboard panel in System Preferences." = "La combinaison de touches « %@ » ne peut pas être utilisée, car elle correspond à un raccourci clavier système. Si vous souhaitez vraiment utiliser cette combinaison de touches, le panneau Clavier des Préférences système permet de modifier la plupart des raccourcis. ";
+
+/* No comment provided by engineer. */
+"The key combination \"%@\" can't be used because it's already used by the menu item \"%@\"." = "La combinaison de touches « %1$@ » ne peut pas être utilisée, car elle est déjà utilisée pour l’élément de menu « %2$@ ». ";
+
+/* No comment provided by engineer. */
+"The key combination \"%@\" can't be used!" = "Impossible d’utiliser la combinaison de touches « %@ ».";
+
+/* No comment provided by engineer. */
+"Type shortcut" = "Saisir le raccourci";
+
+/* No comment provided by engineer. */
+"Use old shortcut" = "Utiliser l’ancien raccourci";
+
