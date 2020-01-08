@@ -1,13 +1,36 @@
-﻿"Space" = "Space";
-"Use old shortcut" = "Use previous shortcut";
-"Type shortcut" = "Type shortcut";
-"Click to record shortcut" = "Add Shortcut";
-"Pad %@" = "Pad %@";
-"The key combination “%@” can't be used!" = "The key combination “%@” can't be used!";
-"The key combination “%@” can't be used because %@." = "The key combination “%@” can't be used because %@.";
-"The key combination “%@” can't be used because it's already used by a system-wide keyboard shortcut. If you really want to use this key combination, most shortcuts can be changed in the Keyboard panel in System Preferences." = "The key combination “%@” can't be used because it's already used by a system-wide keyboard shortcut. If you really want to use this key combination, most shortcuts can be changed in the Keyboard panel in System Preferences.";
-"The key combination “%@” can't be used because it's already used by the menu item “%@”." = "The key combination “%@” can't be used because it's already used by the menu item “%@”.";
-"Command-" = "Command-";
+/* No comment provided by engineer. */
+"Click to record shortcut" = "单击以录制快捷键";
+
+/* No comment provided by engineer. */
+"Command-" = "command";
+
+/* No comment provided by engineer. */
+"Control-" = "control";
+
+/* No comment provided by engineer. */
 "Option-" = "Option-";
+
+/* No comment provided by engineer. */
 "Shift-" = "Shift-";
-"Control-" = "Control-";
+
+/* No comment provided by engineer. */
+"Space" = "Space";
+
+/* No comment provided by engineer. */
+"The key combination \"%@\" can't be used because %@." = "无法使用组合键“%1$@”因为%2$@";
+
+/* No comment provided by engineer. */
+"The key combination \"%@\" can't be used because it's already used by a system-wide keyboard shortcut. If you really want to use this key combination, most shortcuts can be changed in the Keyboard panel in System Preferences." = "组合键“%@”已被系统键盘快捷键使用，因此无法使用。如果您确实要使用此组合键，可以在“系统偏好设置”的“键盘”面板中更改大多数快捷方式。";
+
+/* No comment provided by engineer. */
+"The key combination \"%@\" can't be used because it's already used by the menu item \"%@\"." = "组合键“%1$@”已被菜单项“%2$@”使用，因此无法使用。";
+
+/* No comment provided by engineer. */
+"The key combination \"%@\" can't be used!" = "不能使用组合键“%@”！";
+
+/* No comment provided by engineer. */
+"Type shortcut" = "快捷键类型";
+
+/* No comment provided by engineer. */
+"Use old shortcut" = "使用旧的快捷";
+
