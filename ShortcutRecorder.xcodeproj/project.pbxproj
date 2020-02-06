@@ -585,6 +585,11 @@
 				GCC_PREFIX_HEADER = ShortcutRecorder_Prefix.pch;
 				INFOPLIST_FILE = "ShortcutRecorder-Info.plist";
 				INSTALL_PATH = "@rpath";
+				LOCALIZED_STRING_MACRO_NAMES = (
+					NSLocalizedString,
+					CFCopyLocalizedString,
+					SRLoc,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kulakov.ShortcutRecorder;
 				PRODUCT_NAME = ShortcutRecorder;
 				PROVISIONING_PROFILE = "";
@@ -604,6 +609,11 @@
 				GCC_PREFIX_HEADER = ShortcutRecorder_Prefix.pch;
 				INFOPLIST_FILE = "ShortcutRecorder-Info.plist";
 				INSTALL_PATH = "@rpath";
+				LOCALIZED_STRING_MACRO_NAMES = (
+					NSLocalizedString,
+					CFCopyLocalizedString,
+					SRLoc,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kulakov.ShortcutRecorder;
 				PRODUCT_NAME = ShortcutRecorder;
 				PROVISIONING_PROFILE = "";
