@@ -149,9 +149,11 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
                                            forOrientation:NSLayoutConstraintOrientationVertical];
         }
 
-       [self setToolTip:NSLocalizedStringFromTable(@"Click to record shortcut",
-                                                   @"ShortcutRecorder",
-                                                   nil)];
+       NSString* sgwaesf = NSLocalizedStringFromTableInBundle(@"Click to record shortcut",
+                                                              @"ShortcutRecorder",
+                                                              [NSBundle bundleWithIdentifier:@"com.kulakov.ShortcutRecorder"],
+                                                               nil);
+       [self setToolTip:sgwaesf];
         [self updateTrackingAreas];
     }
 
@@ -231,12 +233,13 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
     _isRecording = YES;
     [self didChangeValueForKey:@"isRecording"];
 
-    [self updateTrackingAreas];
-   [self setToolTip:NSLocalizedStringFromTable(@"Type shortcut",
-                                               @"ShortcutRecorder",
-                                               nil)];
-    NSAccessibilityPostNotification(self, NSAccessibilityTitleChangedNotification);
-    return YES;
+   [self updateTrackingAreas];
+   [self setToolTip:NSLocalizedStringFromTableInBundle(@"Type shortcut",
+                                                       @"ShortcutRecorder",
+                                                       [NSBundle bundleWithIdentifier:@"com.kulakov.ShortcutRecorder"],
+                                                       nil)];
+   NSAccessibilityPostNotification(self, NSAccessibilityTitleChangedNotification);
+   return YES;
 }
 
 - (void)endRecording
@@ -278,10 +281,11 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
         self.objectValue = anObjectValue;
 
     [self updateTrackingAreas];
-   [self setToolTip:NSLocalizedStringFromTable(@"Click to record shortcut",
-                                               @"ShortcutRecorder",
-                                               nil)];
-    [self setNeedsDisplay:YES];
+   [self setToolTip:NSLocalizedStringFromTableInBundle(@"Click to record shortcut",
+                                                       @"ShortcutRecorder",
+                                                       [NSBundle bundleWithIdentifier:@"com.kulakov.ShortcutRecorder"],
+                                                       nil)];
+   [self setNeedsDisplay:YES];
     NSAccessibilityPostNotification(self, NSAccessibilityTitleChangedNotification);
 
     if (self.window.firstResponder == self && ![self canBecomeKeyView])
@@ -387,47 +391,51 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
             label = [[SRModifierFlagsTransformer sharedTransformer] transformedValue:@(modifierFlags)];
         else
             label = self.stringValue;
-
-        if (![label length])
-           label = NSLocalizedStringFromTable(@"Type shortcut",
-                                              @"ShortcutRecorder",
-                                              nil);
+       
+       if (![label length])
+          label = NSLocalizedStringFromTableInBundle(@"Type shortcut",
+                                                     @"ShortcutRecorder",
+                                                     [NSBundle bundleWithIdentifier:@"com.kulakov.ShortcutRecorder"],
+                                                     nil);
     }
     else
     {
-        label = self.stringValue;
-
-        if (![label length])
-           label = NSLocalizedStringFromTable(@"Click to record shortcut",
-                                              @"ShortcutRecorder",
-                                              nil);
+       label = self.stringValue;
+       
+       if (![label length])
+          label = NSLocalizedStringFromTableInBundle(@"Click to record shortcut",
+                                                     @"ShortcutRecorder",
+                                                     [NSBundle bundleWithIdentifier:@"com.kulakov.ShortcutRecorder"],
+                                                     nil);
     }
-
-    return label;
+   
+   return label;
 }
 
 - (NSString *)accessibilityLabel
 {
-    NSString *label = nil;
-
-    if (self.isRecording)
-    {
-        NSUInteger modifierFlags = [NSEvent modifierFlags] & self.allowedModifierFlags;
-        label = [[SRModifierFlagsTransformer sharedPlainTransformer] transformedValue:@(modifierFlags)];
-
-        if (![label length])
-           label = NSLocalizedStringFromTable(@"Type shortcut",
-                                              @"ShortcutRecorder",
-                                              nil);
-    }
+   NSString *label = nil;
+   
+   if (self.isRecording)
+   {
+      NSUInteger modifierFlags = [NSEvent modifierFlags] & self.allowedModifierFlags;
+      label = [[SRModifierFlagsTransformer sharedPlainTransformer] transformedValue:@(modifierFlags)];
+      
+      if (![label length])
+         label = NSLocalizedStringFromTableInBundle(@"Type shortcut",
+                                                    @"ShortcutRecorder",
+                                                    [NSBundle bundleWithIdentifier:@"com.kulakov.ShortcutRecorder"],
+                                                    nil);
+   }
     else
     {
         label = self.accessibilityStringValue;
 
         if (![label length])
-           label = NSLocalizedStringFromTable(@"Click to record shortcut",
-                                              @"ShortcutRecorder",
-                                              nil);
+           label = NSLocalizedStringFromTableInBundle(@"Click to record shortcut",
+                                                      @"ShortcutRecorder",
+                                                      [NSBundle bundleWithIdentifier:@"com.kulakov.ShortcutRecorder"],
+                                                      nil);
     }
 
     return label;
@@ -875,9 +883,10 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
 - (NSString *)view:(NSView *)aView stringForToolTip:(NSToolTipTag)aTag point:(NSPoint)aPoint userData:(void *)aData
 {
     if (aTag == _snapBackButtonToolTipTag)
-       return NSLocalizedStringFromTable(@"Use old shortcut",
-                                         @"ShortcutRecorder",
-                                         nil);
+       return NSLocalizedStringFromTableInBundle(@"Use old shortcut",
+                                                 @"ShortcutRecorder",
+                                                 [NSBundle bundleWithIdentifier:@"com.kulakov.ShortcutRecorder"],
+                                                 nil);
     else
         return [super view:aView stringForToolTip:aTag point:aPoint userData:aData];
 }
@@ -976,9 +985,10 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
 
 - (NSSize)intrinsicContentSize
 {
-   return NSMakeSize(NSWidth([self rectForLabel:NSLocalizedStringFromTable(@"Click to record shortcut",
-                                                                           @"ShortcutRecorder",
-                                                                           nil) withAttributes:self.normalLabelAttributes]) + _SRRecorderControlShapeXRadius + _SRRecorderControlShapeXRadius,
+   return NSMakeSize(NSWidth([self rectForLabel:NSLocalizedStringFromTableInBundle(@"Click to record shortcut",
+                                                                                   @"ShortcutRecorder",
+                                                                                   [NSBundle bundleWithIdentifier:@"com.kulakov.ShortcutRecorder"],
+                                                                                   nil) withAttributes:self.normalLabelAttributes]) + _SRRecorderControlShapeXRadius + _SRRecorderControlShapeXRadius,
                       _SRRecorderControlHeight);
 }
 

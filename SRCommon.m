@@ -25,20 +25,24 @@ NSString *SRReadableStringForCocoaModifierFlagsAndKeyCode(NSUInteger aModifierFl
     if (![t isKeyCodeSpecial:aKeyCode])
         c = [c uppercaseString];
 
-    return [NSString stringWithFormat:@"%@%@%@%@%@",
-            (aModifierFlags & NSEventModifierFlagCommand ? NSLocalizedStringFromTable(@"Command-",
-                                                                                      @"ShortcutRecorder",
-                                                                                      nil) : @""),
-            (aModifierFlags & NSEventModifierFlagOption ? NSLocalizedStringFromTable(@"Option-",
-                                                                                     @"ShortcutRecorder",
-                                                                                     nil) : @""),
-            (aModifierFlags & NSEventModifierFlagControl ? NSLocalizedStringFromTable(@"Control-",
-                                                                                      @"ShortcutRecorder",
-                                                                                      nil) : @""),
-            (aModifierFlags & NSEventModifierFlagShift ? NSLocalizedStringFromTable(@"Shift-",
-                                                                                    @"ShortcutRecorder",
-                                                                                    nil) : @""),
-                                      c];
+   return [NSString stringWithFormat:@"%@%@%@%@%@",
+           (aModifierFlags & NSEventModifierFlagCommand ? NSLocalizedStringFromTableInBundle(@"Command-",
+                                                                                             @"ShortcutRecorder",
+                                                                                             [NSBundle bundleWithIdentifier:@"com.kulakov.ShortcutRecorder"],
+                                                                                             nil) : @""),
+           (aModifierFlags & NSEventModifierFlagOption ? NSLocalizedStringFromTableInBundle(@"Option-",
+                                                                                            @"ShortcutRecorder",
+                                                                                            [NSBundle bundleWithIdentifier:@"com.kulakov.ShortcutRecorder"],
+                                                                                            nil) : @""),
+           (aModifierFlags & NSEventModifierFlagControl ? NSLocalizedStringFromTableInBundle(@"Control-",
+                                                                                             @"ShortcutRecorder",
+                                                                                             [NSBundle bundleWithIdentifier:@"com.kulakov.ShortcutRecorder"],
+                                                                                             nil) : @""),
+           (aModifierFlags & NSEventModifierFlagShift ? NSLocalizedStringFromTableInBundle(@"Shift-",
+                                                                                           @"ShortcutRecorder",
+                                                                                           [NSBundle bundleWithIdentifier:@"com.kulakov.ShortcutRecorder"],
+                                                                                           nil) : @""),
+           c];
 }
 
 
@@ -51,17 +55,21 @@ NSString *SRReadableASCIIStringForCocoaModifierFlagsAndKeyCode(NSUInteger aModif
         c = [c uppercaseString];
 
     return [NSString stringWithFormat:@"%@%@%@%@%@",
-            (aModifierFlags & NSEventModifierFlagCommand ? NSLocalizedStringFromTable(@"Command-",
-                                                                                      @"ShortcutRecorder",
-                                                                                      nil) : @""),
-            (aModifierFlags & NSEventModifierFlagOption ? NSLocalizedStringFromTable(@"Option-",
-                                                                                     @"ShortcutRecorder",
-                                                                                     nil) : @""),
-            (aModifierFlags & NSEventModifierFlagControl ? NSLocalizedStringFromTable(@"Control-",
-                                                                                      @"ShortcutRecorder",
-                                                                                      nil) : @""),
-            (aModifierFlags & NSEventModifierFlagShift ? NSLocalizedStringFromTable(@"Shift-",
-                                                                                    @"ShortcutRecorder",
-                                                                                    nil) : @""),
+            (aModifierFlags & NSEventModifierFlagCommand ? NSLocalizedStringFromTableInBundle(@"Command-",
+                                                                                              @"ShortcutRecorder",
+                                                                                              [NSBundle bundleWithIdentifier:@"com.kulakov.ShortcutRecorder"],
+                                                                                              nil) : @""),
+            (aModifierFlags & NSEventModifierFlagOption ? NSLocalizedStringFromTableInBundle(@"Option-",
+                                                                                             @"ShortcutRecorder",
+                                                                                             [NSBundle bundleWithIdentifier:@"com.kulakov.ShortcutRecorder"],
+                                                                                             nil) : @""),
+            (aModifierFlags & NSEventModifierFlagControl ? NSLocalizedStringFromTableInBundle(@"Control-",
+                                                                                              @"ShortcutRecorder",
+                                                                                              [NSBundle bundleWithIdentifier:@"com.kulakov.ShortcutRecorder"],
+                                                                                              nil) : @""),
+            (aModifierFlags & NSEventModifierFlagShift ? NSLocalizedStringFromTableInBundle(@"Shift-",
+                                                                                            @"ShortcutRecorder",
+                                                                                            [NSBundle bundleWithIdentifier:@"com.kulakov.ShortcutRecorder"],
+                                                                                            nil) : @""),
             c];
 }
