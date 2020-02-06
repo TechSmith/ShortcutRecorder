@@ -18,6 +18,7 @@
 		9398393E0DA4350B007F53F3 /* SRKeyCodeTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = 74C3670C0A246B4900B69171 /* SRKeyCodeTransformer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9398393F0DA4350B007F53F3 /* SRValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = 74C3670E0A246B4900B69171 /* SRValidator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		939839400DA4350B007F53F3 /* SRCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 74C367100A246B4900B69171 /* SRCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A232AAA323EC96BC00B866E2 /* ShortcutRecorder.strings in Resources */ = {isa = PBXBuildFile; fileRef = A232AAA123EC96BC00B866E2 /* ShortcutRecorder.strings */; };
 		B8789A5117C516FF00385549 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8789A5017C516FF00385549 /* Cocoa.framework */; };
 		B8789A5F17C517FE00385549 /* SRKeyCodeTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C3670D0A246B4900B69171 /* SRKeyCodeTransformer.m */; };
 		B8789A6017C517FE00385549 /* SRModifierFlagsTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = E28113AC167B8A9D001E118E /* SRModifierFlagsTransformer.m */; };
@@ -67,7 +68,6 @@
 		E27312421349EDCA00A84433 /* PTKeyCodeTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = A1125B76104C8AF3005C6F7B /* PTKeyCodeTranslator.m */; };
 		E27312431349EDCA00A84433 /* PTKeyCombo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E2A0809CDBADE0085E9ED /* PTKeyCombo.m */; };
 		E273124C1349EE6500A84433 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E273124B1349EE6500A84433 /* Carbon.framework */; };
-		E2741AC51673C79F00A139BD /* ShortcutRecorder.strings in Resources */ = {isa = PBXBuildFile; fileRef = E2741AC31673C79F00A139BD /* ShortcutRecorder.strings */; };
 		E2741ADF1673C83800A139BD /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = E2741ADE1673C83800A139BD /* LICENSE.txt */; };
 		E2741AE11673C90B00A139BD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2741AE01673C90B00A139BD /* Cocoa.framework */; };
 		E2741AE61673C94E00A139BD /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E273124B1349EE6500A84433 /* Carbon.framework */; };
@@ -102,7 +102,11 @@
 		939837B50DA42DFB007F53F3 /* ShortcutRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShortcutRecorder.h; sourceTree = SOURCE_ROOT; };
 		A1125B75104C8AF3005C6F7B /* PTKeyCodeTranslator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTKeyCodeTranslator.h; sourceTree = "<group>"; };
 		A1125B76104C8AF3005C6F7B /* PTKeyCodeTranslator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTKeyCodeTranslator.m; sourceTree = "<group>"; };
-		A2B433A6220335DA008B362B /* zh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = zh; path = zh.lproj/ShortcutRecorder.strings; sourceTree = "<group>"; };
+		A232AAA223EC96BC00B866E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ShortcutRecorder.strings; sourceTree = "<group>"; };
+		A232AAA423EC96C100B866E2 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/ShortcutRecorder.strings; sourceTree = "<group>"; };
+		A232AAA523EC96C300B866E2 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/ShortcutRecorder.strings; sourceTree = "<group>"; };
+		A232AAA623EC96C500B866E2 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/ShortcutRecorder.strings; sourceTree = "<group>"; };
+		A232AAA723EC96C700B866E2 /* zh */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh; path = zh.lproj/ShortcutRecorder.strings; sourceTree = "<group>"; };
 		B8789A4E17C516FF00385549 /* libShortcutRecorder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libShortcutRecorder.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8789A5017C516FF00385549 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		B8789A5317C516FF00385549 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -143,10 +147,6 @@
 		E273122E1349EC9000A84433 /* PTHotKey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PTHotKey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E273122F1349EC9000A84433 /* PTHotKey-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PTHotKey-Info.plist"; sourceTree = SOURCE_ROOT; };
 		E273124B1349EE6500A84433 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
-		E2741AC41673C79F00A139BD /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ShortcutRecorder.strings; sourceTree = "<group>"; };
-		E2741AC61673C7A400A139BD /* de */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/ShortcutRecorder.strings; sourceTree = "<group>"; };
-		E2741AC81673C7A800A139BD /* fr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/ShortcutRecorder.strings; sourceTree = "<group>"; };
-		E2741ACA1673C7AC00A139BD /* ja */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/ShortcutRecorder.strings; sourceTree = "<group>"; };
 		E2741ADE1673C83800A139BD /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		E2741AE01673C90B00A139BD /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		E2741AE81673CCBA00A139BD /* ShortcutRecorder-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ShortcutRecorder-Info.plist"; sourceTree = "<group>"; };
@@ -231,7 +231,6 @@
 				E2741AE71673CC3D00A139BD /* PTHotKey */,
 				080E96DDFE201D6D7F000001 /* ShortcutRecorder */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
-				E2741AC31673C79F00A139BD /* ShortcutRecorder.strings */,
 			);
 			name = ShortcutRecorder;
 			sourceTree = "<group>";
@@ -239,6 +238,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A232AAA123EC96BC00B866E2 /* ShortcutRecorder.strings */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 				B8789A4F17C516FF00385549 /* Frameworks */,
 				E225E4471679E30E00A00529 /* shortcut-recorder-bezel-blue-highlighted-left.png */,
@@ -471,7 +471,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2741AC51673C79F00A139BD /* ShortcutRecorder.strings in Resources */,
 				E2741ADF1673C83800A139BD /* LICENSE.txt in Resources */,
 				E225E4671679E30E00A00529 /* shortcut-recorder-bezel-blue-highlighted-left.png in Resources */,
 				E225E4681679E30E00A00529 /* shortcut-recorder-bezel-blue-highlighted-left@2x.png in Resources */,
@@ -505,6 +504,7 @@
 				E225E4831679E30E00A00529 /* shortcut-recorder-snapback-highlighted.png in Resources */,
 				E225E4841679E30E00A00529 /* shortcut-recorder-snapback-highlighted@2x.png in Resources */,
 				E225E4851679E30E00A00529 /* shortcut-recorder-snapback.png in Resources */,
+				A232AAA323EC96BC00B866E2 /* ShortcutRecorder.strings in Resources */,
 				E225E4861679E30E00A00529 /* shortcut-recorder-snapback@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -555,14 +555,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E2741AC31673C79F00A139BD /* ShortcutRecorder.strings */ = {
+		A232AAA123EC96BC00B866E2 /* ShortcutRecorder.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E2741AC41673C79F00A139BD /* en */,
-				E2741AC61673C7A400A139BD /* de */,
-				E2741AC81673C7A800A139BD /* fr */,
-				E2741ACA1673C7AC00A139BD /* ja */,
-				A2B433A6220335DA008B362B /* zh */,
+				A232AAA223EC96BC00B866E2 /* en */,
+				A232AAA423EC96C100B866E2 /* fr */,
+				A232AAA523EC96C300B866E2 /* de */,
+				A232AAA623EC96C500B866E2 /* ja */,
+				A232AAA723EC96C700B866E2 /* zh */,
 			);
 			name = ShortcutRecorder.strings;
 			sourceTree = "<group>";
