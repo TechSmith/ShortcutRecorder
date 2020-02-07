@@ -26,10 +26,10 @@ NSString *SRReadableStringForCocoaModifierFlagsAndKeyCode(NSUInteger aModifierFl
         c = [c uppercaseString];
 
     return [NSString stringWithFormat:@"%@%@%@%@%@",
-            (aModifierFlags & NSEventModifierFlagCommand ? SRLoc(@"Command-") : @""),
-            (aModifierFlags & NSEventModifierFlagOption ? SRLoc(@"Option-") : @""),
-            (aModifierFlags & NSEventModifierFlagControl ? SRLoc(@"Control-") : @""),
-            (aModifierFlags & NSEventModifierFlagShift ? SRLoc(@"Shift-") : @""),
+            (aModifierFlags & NSEventModifierFlagCommand ? SRLoc(@"Command-", nil) : @""),
+            (aModifierFlags & NSEventModifierFlagOption ? SRLoc(@"Option-", nil) : @""),
+            (aModifierFlags & NSEventModifierFlagControl ? SRLoc(@"Control-", nil) : @""),
+            (aModifierFlags & NSEventModifierFlagShift ? SRLoc(@"Shift-", nil) : @""),
                                       c];
 }
 
@@ -43,9 +43,9 @@ NSString *SRReadableASCIIStringForCocoaModifierFlagsAndKeyCode(NSUInteger aModif
         c = [c uppercaseString];
 
     return [NSString stringWithFormat:@"%@%@%@%@%@",
-            (aModifierFlags & NSEventModifierFlagCommand ? SRLoc(@"Command-") : @""),
-            (aModifierFlags & NSEventModifierFlagOption ? SRLoc(@"Option-") : @""),
-            (aModifierFlags & NSEventModifierFlagControl ? SRLoc(@"Control-") : @""),
-            (aModifierFlags & NSEventModifierFlagShift ? SRLoc(@"Shift-") : @""),
+            (aModifierFlags & NSEventModifierFlagCommand ? SRLoc(@"Command-", nil) : @""),
+            (aModifierFlags & NSEventModifierFlagOption ? SRLoc(@"Option-", nil) : @""),
+            (aModifierFlags & NSEventModifierFlagControl ? SRLoc(@"Control-", nil) : @""),
+            (aModifierFlags & NSEventModifierFlagShift ? SRLoc(@"Shift-", @"") : nil),
             c];
 }

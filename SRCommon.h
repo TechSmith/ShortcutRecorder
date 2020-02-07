@@ -75,7 +75,7 @@ FOUNDATION_STATIC_INLINE UInt32 SRCocoaToCarbonFlags(NSUInteger aCocoaFlags)
 /*!
     @brief  Convenient method to get localized string from the framework bundle.
  */
-FOUNDATION_STATIC_INLINE NSString *SRLoc(NSString *aKey)
+FOUNDATION_STATIC_INLINE NSString *SRLoc(NSString *aKey, NSString* comment)
 {
 #ifdef SRLib
    NSString* result = NSLocalizedStringFromTable(aKey,
