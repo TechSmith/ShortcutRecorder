@@ -27,6 +27,11 @@ static const NSUInteger SRCocoaModifierFlagsMask = NSEventModifierFlagCommand | 
  */
 static const NSUInteger SRCarbonModifierFlagsMask = cmdKey | optionKey | shiftKey | controlKey;
 
+/*!
+   @brief  Bundle identifier for ShortcutRecorder library
+*/
+static NSString* SRBundleIdentifier = @"com.kulakov.ShortcutRecorder";
+
 
 /*!
     @brief  Converts carbon modifier flags to cocoa.

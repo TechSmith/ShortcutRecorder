@@ -151,7 +151,7 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
 
        NSString* sgwaesf = NSLocalizedStringFromTableInBundle(@"Click to record shortcut",
                                                               @"ShortcutRecorder",
-                                                              [NSBundle bundleWithIdentifier:@"com.kulakov.ShortcutRecorder"],
+                                                              [NSBundle bundleWithIdentifier:SRBundleIdentifier],
                                                                nil);
        [self setToolTip:sgwaesf];
         [self updateTrackingAreas];
@@ -236,7 +236,7 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
    [self updateTrackingAreas];
    [self setToolTip:NSLocalizedStringFromTableInBundle(@"Type shortcut",
                                                        @"ShortcutRecorder",
-                                                       [NSBundle bundleWithIdentifier:@"com.kulakov.ShortcutRecorder"],
+                                                       [NSBundle bundleWithIdentifier:SRBundleIdentifier],
                                                        nil)];
    NSAccessibilityPostNotification(self, NSAccessibilityTitleChangedNotification);
    return YES;
@@ -283,7 +283,7 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
     [self updateTrackingAreas];
    [self setToolTip:NSLocalizedStringFromTableInBundle(@"Click to record shortcut",
                                                        @"ShortcutRecorder",
-                                                       [NSBundle bundleWithIdentifier:@"com.kulakov.ShortcutRecorder"],
+                                                       [NSBundle bundleWithIdentifier:SRBundleIdentifier],
                                                        nil)];
    [self setNeedsDisplay:YES];
     NSAccessibilityPostNotification(self, NSAccessibilityTitleChangedNotification);
@@ -395,7 +395,7 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
        if (![label length])
           label = NSLocalizedStringFromTableInBundle(@"Type shortcut",
                                                      @"ShortcutRecorder",
-                                                     [NSBundle bundleWithIdentifier:@"com.kulakov.ShortcutRecorder"],
+                                                     [NSBundle bundleWithIdentifier:SRBundleIdentifier],
                                                      nil);
     }
     else
@@ -405,7 +405,7 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
        if (![label length])
           label = NSLocalizedStringFromTableInBundle(@"Click to record shortcut",
                                                      @"ShortcutRecorder",
-                                                     [NSBundle bundleWithIdentifier:@"com.kulakov.ShortcutRecorder"],
+                                                     [NSBundle bundleWithIdentifier:SRBundleIdentifier],
                                                      nil);
     }
    
@@ -424,7 +424,7 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
       if (![label length])
          label = NSLocalizedStringFromTableInBundle(@"Type shortcut",
                                                     @"ShortcutRecorder",
-                                                    [NSBundle bundleWithIdentifier:@"com.kulakov.ShortcutRecorder"],
+                                                    [NSBundle bundleWithIdentifier:SRBundleIdentifier],
                                                     nil);
    }
     else
@@ -434,7 +434,7 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
         if (![label length])
            label = NSLocalizedStringFromTableInBundle(@"Click to record shortcut",
                                                       @"ShortcutRecorder",
-                                                      [NSBundle bundleWithIdentifier:@"com.kulakov.ShortcutRecorder"],
+                                                      [NSBundle bundleWithIdentifier:SRBundleIdentifier],
                                                       nil);
     }
 
@@ -885,7 +885,7 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
     if (aTag == _snapBackButtonToolTipTag)
        return NSLocalizedStringFromTableInBundle(@"Use old shortcut",
                                                  @"ShortcutRecorder",
-                                                 [NSBundle bundleWithIdentifier:@"com.kulakov.ShortcutRecorder"],
+                                                 [NSBundle bundleWithIdentifier:SRBundleIdentifier],
                                                  nil);
     else
         return [super view:aView stringForToolTip:aTag point:aPoint userData:aData];
@@ -987,7 +987,7 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
 {
    return NSMakeSize(NSWidth([self rectForLabel:NSLocalizedStringFromTableInBundle(@"Click to record shortcut",
                                                                                    @"ShortcutRecorder",
-                                                                                   [NSBundle bundleWithIdentifier:@"com.kulakov.ShortcutRecorder"],
+                                                                                   [NSBundle bundleWithIdentifier:SRBundleIdentifier],
                                                                                    nil) withAttributes:self.normalLabelAttributes]) + _SRRecorderControlShapeXRadius + _SRRecorderControlShapeXRadius,
                       _SRRecorderControlHeight);
 }

@@ -171,7 +171,7 @@ FOUNDATION_STATIC_INLINE NSString* _SRUnicharToString(unichar aChar)
             @(kVK_F20): @"F20",
             @(kVK_Space): NSLocalizedStringFromTableInBundle(@"Space",
                                                              @"ShortcutRecorder",
-                                                             [NSBundle bundleWithIdentifier:@"com.kulakov.ShortcutRecorder"],
+                                                             [NSBundle bundleWithIdentifier:SRBundleIdentifier],
                                                              nil),
             @(kVK_Delete): _SRUnicharToString(SRKeyCodeGlyphDeleteLeft),
             @(kVK_ForwardDelete): _SRUnicharToString(SRKeyCodeGlyphDeleteRight),

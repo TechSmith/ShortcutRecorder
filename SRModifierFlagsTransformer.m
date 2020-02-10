@@ -80,25 +80,25 @@
        if (modifierFlags & NSEventModifierFlagControl)
           [s appendString:NSLocalizedStringFromTableInBundle(@"Control-",
                                                              @"ShortcutRecorder",
-                                                             [NSBundle bundleWithIdentifier:@"com.kulakov.ShortcutRecorder"],
+                                                             [NSBundle bundleWithIdentifier:SRBundleIdentifier],
                                                              nil)];
        
        if (modifierFlags & NSEventModifierFlagOption)
           [s appendString:NSLocalizedStringFromTableInBundle(@"Option-",
                                                              @"ShortcutRecorder",
-                                                             [NSBundle bundleWithIdentifier:@"com.kulakov.ShortcutRecorder"],
+                                                             [NSBundle bundleWithIdentifier:SRBundleIdentifier],
                                                              nil)];
        
        if (modifierFlags & NSEventModifierFlagShift)
           [s appendString:NSLocalizedStringFromTableInBundle(@"Shift-",
                                                              @"ShortcutRecorder",
-                                                             [NSBundle bundleWithIdentifier:@"com.kulakov.ShortcutRecorder"],
+                                                             [NSBundle bundleWithIdentifier:SRBundleIdentifier],
                                                              nil)];
        
        if (modifierFlags & NSEventModifierFlagCommand)
           [s appendString:NSLocalizedStringFromTableInBundle(@"Command-",
                                                              @"ShortcutRecorder",
-                                                             [NSBundle bundleWithIdentifier:@"com.kulakov.ShortcutRecorder"],
+                                                             [NSBundle bundleWithIdentifier:SRBundleIdentifier],
                                                              nil)];
 
         if (s.length > 0)
