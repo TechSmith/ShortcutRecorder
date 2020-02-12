@@ -78,24 +78,28 @@
         NSMutableString *s = [NSMutableString string];
 
        if (modifierFlags & NSEventModifierFlagControl)
-          [s appendString:NSLocalizedStringFromTable(@"Control-",
-                                                     @"ShortcutRecorder",
-                                                     nil)];
-
+          [s appendString:NSLocalizedStringFromTableInBundle(@"Control-",
+                                                             @"ShortcutRecorder",
+                                                             [NSBundle bundleWithIdentifier:SRBundleIdentifier],
+                                                             nil)];
+       
        if (modifierFlags & NSEventModifierFlagOption)
-          [s appendString:NSLocalizedStringFromTable(@"Option-",
-                                                     @"ShortcutRecorder",
-                                                     nil)];
-
+          [s appendString:NSLocalizedStringFromTableInBundle(@"Option-",
+                                                             @"ShortcutRecorder",
+                                                             [NSBundle bundleWithIdentifier:SRBundleIdentifier],
+                                                             nil)];
+       
        if (modifierFlags & NSEventModifierFlagShift)
-          [s appendString:NSLocalizedStringFromTable(@"Shift-",
-                                                     @"ShortcutRecorder",
-                                                     nil)];
-
+          [s appendString:NSLocalizedStringFromTableInBundle(@"Shift-",
+                                                             @"ShortcutRecorder",
+                                                             [NSBundle bundleWithIdentifier:SRBundleIdentifier],
+                                                             nil)];
+       
        if (modifierFlags & NSEventModifierFlagCommand)
-          [s appendString:NSLocalizedStringFromTable(@"Command-",
-                                                     @"ShortcutRecorder",
-                                                     nil)];
+          [s appendString:NSLocalizedStringFromTableInBundle(@"Command-",
+                                                             @"ShortcutRecorder",
+                                                             [NSBundle bundleWithIdentifier:SRBundleIdentifier],
+                                                             nil)];
 
         if (s.length > 0)
             [s deleteCharactersInRange:NSMakeRange(s.length - 1, 1)];
