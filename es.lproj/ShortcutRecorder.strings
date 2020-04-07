@@ -1,0 +1,36 @@
+/* No comment provided by engineer. */
+"Click to record shortcut" = "Haga clic para grabar acceso directo";
+
+/* No comment provided by engineer. */
+"Command-" = "Mando-";
+
+/* No comment provided by engineer. */
+"Control-" = "Controlar-";
+
+/* No comment provided by engineer. */
+"Option-" = "Opción-";
+
+/* No comment provided by engineer. */
+"Shift-" = "Cambio-";
+
+/* No comment provided by engineer. */
+"Space" = "Espacio";
+
+/* No comment provided by engineer. */
+"The key combination \"%@\" can't be used because %@." = "La combinación de teclas \"%1$@\" no se puede usar porque %2$@.";
+
+/* No comment provided by engineer. */
+"The key combination \"%@\" can't be used because it's already used by a system-wide keyboard shortcut. If you really want to use this key combination, most shortcuts can be changed in the Keyboard panel in System Preferences." = "La combinación de teclas \"%@\" no se puede usar porque ya está siendo utilizada por un atajo de teclado en todo el sistema. Si realmente desea utilizar esta combinación de teclas, la mayoría de los accesos directos se pueden cambiar en el panel Teclado en Preferencias del Sistema.";
+
+/* No comment provided by engineer. */
+"The key combination \"%@\" can't be used because it's already used by the menu item \"%@\"." = "La combinación de teclas \"%1$@\" no se puede usar porque ya la usa el elemento de menú \"%2$@\".";
+
+/* No comment provided by engineer. */
+"The key combination \"%@\" can't be used!" = "¡La combinación de teclas \"%@\" no se puede utilizar!";
+
+/* No comment provided by engineer. */
+"Type shortcut" = "Tipo de acceso directo";
+
+/* No comment provided by engineer. */
+"Use old shortcut" = "Usa un atajo antiguo";
+

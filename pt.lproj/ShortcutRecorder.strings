@@ -1,0 +1,36 @@
+/* No comment provided by engineer. */
+"Click to record shortcut" = "Clique para gravar o atalho";
+
+/* No comment provided by engineer. */
+"Command-" = "Comando-";
+
+/* No comment provided by engineer. */
+"Control-" = "Ao controle-";
+
+/* No comment provided by engineer. */
+"Option-" = "Opção-";
+
+/* No comment provided by engineer. */
+"Shift-" = "Mudança-";
+
+/* No comment provided by engineer. */
+"Space" = "Espaço";
+
+/* No comment provided by engineer. */
+"The key combination \"%@\" can't be used because %@." = "A combinação de teclas \"%1$@\" não pode ser usada porque %2$@.";
+
+/* No comment provided by engineer. */
+"The key combination \"%@\" can't be used because it's already used by a system-wide keyboard shortcut. If you really want to use this key combination, most shortcuts can be changed in the Keyboard panel in System Preferences." = "A combinação de teclas \"%@\" não pode ser usada porque já está sendo usada por um atalho de teclado em todo o sistema. Se você realmente deseja usar essa combinação de teclas, a maioria dos atalhos pode ser alterada no painel Teclado em Preferências do sistema.";
+
+/* No comment provided by engineer. */
+"The key combination \"%@\" can't be used because it's already used by the menu item \"%@\"." = "A combinação de teclas \"%1$@\" não pode ser usada porque já está sendo usada pelo item de menu \"%2$@\".";
+
+/* No comment provided by engineer. */
+"The key combination \"%@\" can't be used!" = "A combinação de teclas \"%@\" não pode ser usada!";
+
+/* No comment provided by engineer. */
+"Type shortcut" = "Digite atalho";
+
+/* No comment provided by engineer. */
+"Use old shortcut" = "Usar atalho antigo";
+
