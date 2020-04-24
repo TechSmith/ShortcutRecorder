@@ -1,7 +1,7 @@
-﻿"Space" = "Space";
+"Space" = "Space";
 "Use old shortcut" = "Use previous shortcut";
 "Type shortcut" = "Type shortcut";
-"Click to record shortcut" = "Add Shortcut";
+"Add Shortcut" = "+ Shortcut";
 "Pad %@" = "Pad %@";
 "The key combination “%@” can't be used!" = "The key combination “%@” can't be used!";
 "The key combination “%@” can't be used because %@." = "The key combination “%@” can't be used because %@.";
