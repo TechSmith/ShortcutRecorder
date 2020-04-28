@@ -149,7 +149,7 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
                                            forOrientation:NSLayoutConstraintOrientationVertical];
         }
 
-       NSString* sgwaesf = NSLocalizedStringFromTableInBundle(@"Add Shortcut",
+       NSString* sgwaesf = NSLocalizedStringFromTableInBundle(@"+ Shortcut",
                                                               @"ShortcutRecorder",
                                                               [NSBundle bundleWithIdentifier:SRBundleIdentifier],
                                                                nil);
@@ -281,7 +281,7 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
         self.objectValue = anObjectValue;
 
     [self updateTrackingAreas];
-   [self setToolTip:NSLocalizedStringFromTableInBundle(@"Add Shortcut",
+   [self setToolTip:NSLocalizedStringFromTableInBundle(@"+ Shortcut",
                                                        @"ShortcutRecorder",
                                                        [NSBundle bundleWithIdentifier:SRBundleIdentifier],
                                                        nil)];
@@ -403,7 +403,7 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
        label = self.stringValue;
        
        if (![label length])
-          label = NSLocalizedStringFromTableInBundle(@"Add Shortcut",
+          label = NSLocalizedStringFromTableInBundle(@"+ Shortcut",
                                                      @"ShortcutRecorder",
                                                      [NSBundle bundleWithIdentifier:SRBundleIdentifier],
                                                      nil);
@@ -432,7 +432,7 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
         label = self.accessibilityStringValue;
 
         if (![label length])
-           label = NSLocalizedStringFromTableInBundle(@"Add Shortcut",
+           label = NSLocalizedStringFromTableInBundle(@"+ Shortcut",
                                                       @"ShortcutRecorder",
                                                       [NSBundle bundleWithIdentifier:SRBundleIdentifier],
                                                       nil);
@@ -985,7 +985,7 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
 
 - (NSSize)intrinsicContentSize
 {
-   return NSMakeSize(NSWidth([self rectForLabel:NSLocalizedStringFromTableInBundle(@"Add Shortcut",
+   return NSMakeSize(NSWidth([self rectForLabel:NSLocalizedStringFromTableInBundle(@"+ Shortcut",
                                                                                    @"ShortcutRecorder",
                                                                                    [NSBundle bundleWithIdentifier:SRBundleIdentifier],
                                                                                    nil) withAttributes:self.normalLabelAttributes]) + _SRRecorderControlShapeXRadius + _SRRecorderControlShapeXRadius,
