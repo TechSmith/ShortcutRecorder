@@ -20,7 +20,7 @@
 "The key combination \"%@\" can't be used because %@." = "Die Tastenkombination „%1$@“ kann aus folgendem Grund nicht verwendet werden: %2$@.";
 
 /* No comment provided by engineer. */
-"The key combination \"%@\" can't be used because it's already used by a system-wide keyboard shortcut. If you really want to use this key combination, most shortcuts can be changed in the Keyboard panel in System Preferences." = "Die Tastenkombination „%@“ kann nicht verwendet werden, weil sie bereits mit einem systemweit gültigen Tastaturbefehl belegt ist. Wenn Sie trotzdem diese Tastenkombination verwenden wollen, können Sie die die meisten Tastaturbefehle in den Systemeinstellungen unter „Tastatur“ ändern.";
+"The key combination \"%@\" can't be used because it's already used by a system-wide keyboard shortcut. If you really want to use this key combination, most shortcuts can be changed in the Keyboard panel in System Preferences." = "Die Tastenkombination „%@“ kann nicht verwendet werden, weil sie bereits mit einem systemweit gültigen Tastaturbefehl belegt ist. Wenn Sie trotzdem diese Tastemkombination verwenden wollen, können Sie die die meisten Tastaturbefehle in den Systemeinstellungen unter „Tastatur“ ändern.";
 
 /* No comment provided by engineer. */
 "The key combination \"%@\" can't be used because it's already used by the menu item \"%@\"." = "Die Tastenkombination „%1$@“ kann nicht verwendet werden, weil sie bereits mit dem Menüeintrag „%2$@“ belegt ist.";
