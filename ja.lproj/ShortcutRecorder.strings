@@ -1,14 +1,36 @@
-"Space" = "スペース";
-"Use old shortcut" = "古いショートカット設定を使用";
-"Type shortcut" = "ショートカットを入力してください";
-"Click to record shortcut" = "クリックして、ショートカットを記録してください";
-"Pad %@" = "パッド %@";
-"The key combination \"%@\" can't be used!" = "\"%@\" というキーの組み合わせは使用できません！";
-"The key combination \"%@\" can't be used because %@." = "\"%@\" というキーの組み合わせは使用できません。その理由は、%@です。";
-"The key combination \"%@\" can't be used because it's already used by a system-wide keyboard shortcut. If you really want to use this key combination, most shortcuts can be changed in the Keyboard panel in System Preferences." = "\"%@\" というキーの組み合わせは、すでにシステムで他のショートカットに割り当てられています。(システム環境設定の「キーボードとマウス」パネルでショートカットの割り当てを変更できます。)";
-"The key combination \"%@\" can't be used because it's already used by the menu item \"%@\"." = "\"%@\" というキーの組み合わせは、すでにメニューアイテム \"%@\" によって使われています。";
+/* No comment provided by engineer. */
+"+ Shortcut" = "+ ショートカット";
+
+/* No comment provided by engineer. */
 "Command-" = "Command-";
-"Option-" = "Option-";
-"Shift-" = "Shift-";
+
+/* No comment provided by engineer. */
 "Control-" = "Control-";
+
+/* No comment provided by engineer. */
+"Option-" = "Option-";
+
+/* No comment provided by engineer. */
+"Shift-" = "Shift-";
+
+/* No comment provided by engineer. */
+"Space" = "スペースバー";
+
+/* No comment provided by engineer. */
+"The key combination \"%@\" can't be used because %@." = "キーの組み合わせ \"%1$@\" は使用できません。理由: %2$@。";
+
+/* No comment provided by engineer. */
+"The key combination \"%@\" can't be used because it's already used by a system-wide keyboard shortcut. If you really want to use this key combination, most shortcuts can be changed in the Keyboard panel in System Preferences." = "システム全体のキーボード ショートカットですでに使用されているため、キーの組み合わせ \"%@\" は使用できません。このキーの組み合わせを使用したい場合、ほとんどのショートカットはシステム環境設定の [キーボード] パネルで変更することができます。";
+
+/* No comment provided by engineer. */
+"The key combination \"%@\" can't be used because it's already used by the menu item \"%@\"." = "メニュー項目 \"%2$@\" ですでに使用されているため、キーの組み合わせ \"%1$@\" は使用できません。";
+
+/* No comment provided by engineer. */
+"The key combination \"%@\" can't be used!" = "キーの組み合わせ \"%@\" は使用できません。";
+
+/* No comment provided by engineer. */
+"Type shortcut" = "ショートカットを入力";
+
+/* No comment provided by engineer. */
+"Use old shortcut" = "以前のショートカットを使用";
 
