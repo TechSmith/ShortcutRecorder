@@ -281,7 +281,7 @@ FOUNDATION_STATIC_INLINE NSString* _SRUnicharToString(unichar aChar)
 
     if (self.usesASCIICapableKeyboardInputSource)
     {
-        TISInputSourceRef tisSource = TISCopyCurrentASCIICapableKeyboardInputSource();
+        TISInputSourceRef tisSource = TISCopyCurrentASCIICapableKeyboardLayoutInputSource();
 
         if (!tisSource)
             return @"";
