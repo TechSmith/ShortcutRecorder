@@ -538,57 +538,15 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
 
     NSRect frame = self.bounds;
     frame.size.height = _SRRecorderControlHeight;
-
-    if (self.isRecording)
-    {
-        NSDrawThreePartImage(frame,
-                             _SRImages[3],
-                             _SRImages[4],
-                             _SRImages[5],
-                             NO,
-                             NSCompositingOperationSourceOver,
-                             1.0,
-                             self.isFlipped);
-    }
-    else
-    {
-        if (self.isMainButtonHighlighted)
-        {
-            if ([NSColor currentControlTint] == NSBlueControlTint)
-            {
-                NSDrawThreePartImage(frame,
-                                     _SRImages[0],
-                                     _SRImages[1],
-                                     _SRImages[2],
-                                     NO,
-                                     NSCompositingOperationSourceOver,
-                                     1.0,
-                                     self.isFlipped);
-            }
-            else
-            {
-                NSDrawThreePartImage(frame,
-                                     _SRImages[6],
-                                     _SRImages[7],
-                                     _SRImages[8],
-                                     NO,
-                                     NSCompositingOperationSourceOver,
-                                     1.0,
-                                     self.isFlipped);
-            }
-        }
-        else
-        {
-            NSDrawThreePartImage(frame,
-                                 _SRImages[9],
-                                 _SRImages[10],
-                                 _SRImages[11],
-                                 NO,
-                                 NSCompositingOperationSourceOver,
-                                 1.0,
-                                 self.isFlipped);
-        }
-    }
+    CGFloat corner = frame.size.height / 2;
+    frame = NSInsetRect(frame, 1, 1);
+   
+    NSBezierPath* path = [NSBezierPath bezierPathWithRoundedRect:frame xRadius:corner yRadius:corner];
+    path.lineWidth = 1;
+    [[NSColor controlColor] setFill];
+    [[NSColor grayColor] setStroke];
+    [path fill];
+    [path stroke];
 
     [NSGraphicsContext restoreGraphicsState];
 }
