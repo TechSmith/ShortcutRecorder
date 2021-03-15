@@ -64,7 +64,7 @@ static const CGFloat _SRRecorderControlSnapBackButtonLeftOffset = 3.0;
 static const NSSize _SRRecorderControlSnapBackButtonSize = {.width = _SRRecorderControlSnapBackButtonWidth, .height = _SRRecorderControlSnapBackButtonHeight};
 
 
-static NSImage *_SRImages[16];
+static NSImage *_SRImages[4];
 
 
 static NSUInteger _SRValueObservationContext;
@@ -538,57 +538,15 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
 
     NSRect frame = self.bounds;
     frame.size.height = _SRRecorderControlHeight;
-
-    if (self.isRecording)
-    {
-        NSDrawThreePartImage(frame,
-                             _SRImages[3],
-                             _SRImages[4],
-                             _SRImages[5],
-                             NO,
-                             NSCompositingOperationSourceOver,
-                             1.0,
-                             self.isFlipped);
-    }
-    else
-    {
-        if (self.isMainButtonHighlighted)
-        {
-            if ([NSColor currentControlTint] == NSBlueControlTint)
-            {
-                NSDrawThreePartImage(frame,
-                                     _SRImages[0],
-                                     _SRImages[1],
-                                     _SRImages[2],
-                                     NO,
-                                     NSCompositingOperationSourceOver,
-                                     1.0,
-                                     self.isFlipped);
-            }
-            else
-            {
-                NSDrawThreePartImage(frame,
-                                     _SRImages[6],
-                                     _SRImages[7],
-                                     _SRImages[8],
-                                     NO,
-                                     NSCompositingOperationSourceOver,
-                                     1.0,
-                                     self.isFlipped);
-            }
-        }
-        else
-        {
-            NSDrawThreePartImage(frame,
-                                 _SRImages[9],
-                                 _SRImages[10],
-                                 _SRImages[11],
-                                 NO,
-                                 NSCompositingOperationSourceOver,
-                                 1.0,
-                                 self.isFlipped);
-        }
-    }
+    CGFloat corner = frame.size.height / 2;
+    frame = NSInsetRect(frame, 1, 1);
+   
+    NSBezierPath* path = [NSBezierPath bezierPathWithRoundedRect:frame xRadius:corner yRadius:corner];
+    path.lineWidth = 1;
+    [[NSColor controlColor] setFill];
+    [[NSColor grayColor] setStroke];
+    [path fill];
+    [path stroke];
 
     [NSGraphicsContext restoreGraphicsState];
 }
@@ -633,14 +591,14 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
 
     if (self.isSnapBackButtonHighlighted)
     {
-        [_SRImages[14] drawInRect:imageRect
+        [_SRImages[2] drawInRect:imageRect
                          fromRect:NSZeroRect
                         operation:NSCompositingOperationSourceOver
                          fraction:1.0];
     }
     else
     {
-        [_SRImages[15] drawInRect:imageRect
+        [_SRImages[3] drawInRect:imageRect
                          fromRect:NSZeroRect
                         operation:NSCompositingOperationSourceOver
                          fraction:1.0];
@@ -670,14 +628,14 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
 
     if (self.isClearButtonHighlighted)
     {
-        [_SRImages[12] drawInRect:imageRect
+        [_SRImages[0] drawInRect:imageRect
                          fromRect:NSZeroRect
                         operation:NSCompositingOperationSourceOver
                          fraction:1.0];
     }
     else
     {
-        [_SRImages[13] drawInRect:imageRect
+        [_SRImages[1] drawInRect:imageRect
                          fromRect:NSZeroRect
                         operation:NSCompositingOperationSourceOver
                          fraction:1.0];
@@ -910,22 +868,10 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
 
     static dispatch_once_t OnceToken;
     dispatch_once(&OnceToken, ^{
-        _SRImages[0] = SRImage(@"shortcut-recorder-bezel-blue-highlighted-left");
-        _SRImages[1] = SRImage(@"shortcut-recorder-bezel-blue-highlighted-middle");
-        _SRImages[2] = SRImage(@"shortcut-recorder-bezel-blue-highlighted-right");
-        _SRImages[3] = SRImage(@"shortcut-recorder-bezel-editing-left");
-        _SRImages[4] = SRImage(@"shortcut-recorder-bezel-editing-middle");
-        _SRImages[5] = SRImage(@"shortcut-recorder-bezel-editing-right");
-        _SRImages[6] = SRImage(@"shortcut-recorder-bezel-graphite-highlight-mask-left");
-        _SRImages[7] = SRImage(@"shortcut-recorder-bezel-graphite-highlight-mask-middle");
-        _SRImages[8] = SRImage(@"shortcut-recorder-bezel-graphite-highlight-mask-right");
-        _SRImages[9] = SRImage(@"shortcut-recorder-bezel-left");
-        _SRImages[10] = SRImage(@"shortcut-recorder-bezel-middle");
-        _SRImages[11] = SRImage(@"shortcut-recorder-bezel-right");
-        _SRImages[12] = SRImage(@"shortcut-recorder-clear-highlighted");
-        _SRImages[13] = SRImage(@"shortcut-recorder-clear");
-        _SRImages[14] = SRImage(@"shortcut-recorder-snapback-highlighted");
-        _SRImages[15] = SRImage(@"shortcut-recorder-snapback");
+        _SRImages[0] = SRImage(@"shortcut-recorder-clear-highlighted");
+        _SRImages[1] = SRImage(@"shortcut-recorder-clear");
+        _SRImages[2] = SRImage(@"shortcut-recorder-snapback-highlighted");
+        _SRImages[3] = SRImage(@"shortcut-recorder-snapback");
     });
 }
 
