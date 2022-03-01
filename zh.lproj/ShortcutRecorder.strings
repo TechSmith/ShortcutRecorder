@@ -2,35 +2,35 @@
 "+ Shortcut" = "+ 快捷键";
 
 /* No comment provided by engineer. */
-"Command-" = "command";
+"Command-" = "Command 键 -";
 
 /* No comment provided by engineer. */
-"Control-" = "control";
+"Control-" = "Control 键 -";
 
 /* No comment provided by engineer. */
-"Option-" = "Option-";
+"Option-" = "Option 键 -";
 
 /* No comment provided by engineer. */
-"Shift-" = "Shift-";
+"Shift-" = "Shift 键 -";
 
 /* No comment provided by engineer. */
-"Space" = "Space";
+"Space" = "空格";
 
 /* No comment provided by engineer. */
-"The key combination \"%@\" can't be used because %@." = "无法使用组合键“%1$@”因为%2$@";
+"The key combination \"%@\" can't be used because %@." = "由于%2$@，无法使用快捷键组合 “%1$@”。";
 
 /* No comment provided by engineer. */
-"The key combination \"%@\" can't be used because it's already used by a system-wide keyboard shortcut. If you really want to use this key combination, most shortcuts can be changed in the Keyboard panel in System Preferences." = "组合键“%@”已被系统键盘快捷键使用，因此无法使用。如果您确实要使用此组合键，可以在“系统偏好设置”的“键盘”面板中更改大多数快捷方式。";
+"The key combination \"%@\" can't be used because it's already used by a system-wide keyboard shortcut. If you really want to use this key combination, most shortcuts can be changed in the Keyboard panel in System Preferences." = "由于已在系统中使用，无法使用快捷键组合“%@”如果您确实想要使用该快捷键组合，大多数快捷键设置可以在“系统偏好”中的“键盘”面板更改。";
 
 /* No comment provided by engineer. */
-"The key combination \"%@\" can't be used because it's already used by the menu item \"%@\"." = "组合键“%1$@”已被菜单项“%2$@”使用，因此无法使用。";
+"The key combination \"%@\" can't be used because it's already used by the menu item \"%@\"." = "由于已在菜单选项“%2$@”使用，无法使用快捷键组合“%1$@”。";
 
 /* No comment provided by engineer. */
-"The key combination \"%@\" can't be used!" = "不能使用组合键“%@”！";
+"The key combination \"%@\" can't be used!" = "无法使用快捷键组合 “%@”！";
 
 /* No comment provided by engineer. */
-"Type shortcut" = "快捷键类型";
+"Type shortcut" = "输入快捷键";
 
 /* No comment provided by engineer. */
-"Use old shortcut" = "使用旧的快捷";
+"Use old shortcut" = "使用旧的快捷键";
 
