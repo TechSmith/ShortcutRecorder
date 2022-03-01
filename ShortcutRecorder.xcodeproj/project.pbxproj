@@ -689,6 +689,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kulakov.PTHotKey;
 				PRODUCT_NAME = PTHotKey;
+				USE_HEADERMAP = YES;
 			};
 			name = Debug;
 		};
@@ -712,6 +713,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kulakov.PTHotKey;
 				PRODUCT_NAME = PTHotKey;
+				USE_HEADERMAP = YES;
 			};
 			name = Release;
 		};
