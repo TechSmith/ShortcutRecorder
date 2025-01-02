@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F36E9F12D271542009D2336 /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 939837800DA42965007F53F3 /* ShortcutRecorder.framework */; };
 		5A85A3561E82EFFE00089565 /* PTKeyCodes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A85A3551E82EFFE00089565 /* PTKeyCodes.plist */; };
 		5A85A3571E82F00F00089565 /* PTKeyCodes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A85A3551E82EFFE00089565 /* PTKeyCodes.plist */; };
 		939837950DA429EC007F53F3 /* SRRecorderControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E29C109CDB9360085E9ED /* SRRecorderControl.m */; };
@@ -56,6 +57,16 @@
 		E2BE927C16AC052000827E8C /* PTHotKey+ShortcutRecorder.h in Headers */ = {isa = PBXBuildFile; fileRef = E279508E131A7498008AE1DA /* PTHotKey+ShortcutRecorder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E2BE927D16AC052600827E8C /* PTHotKey+ShortcutRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = E279508F131A7498008AE1DA /* PTHotKey+ShortcutRecorder.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1F36E9F32D271542009D2336 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9398377F0DA42965007F53F3;
+			remoteInfo = ShortcutRecorder.framework;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0B8E29C009CDB9360085E9ED /* SRRecorderControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRRecorderControl.h; sourceTree = "<group>"; };
@@ -136,6 +147,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F36E9F12D271542009D2336 /* ShortcutRecorder.framework in Frameworks */,
 				E273124C1349EE6500A84433 /* Carbon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -177,6 +189,13 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
+		1F36E9F02D271542009D2336 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		29B97314FDCFA39411CA2CEA /* ShortcutRecorder */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +205,7 @@
 				080E96DDFE201D6D7F000001 /* ShortcutRecorder */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				E2741AC31673C79F00A139BD /* ShortcutRecorder.strings */,
+				1F36E9F02D271542009D2336 /* Frameworks */,
 			);
 			name = ShortcutRecorder;
 			sourceTree = "<group>";
@@ -351,6 +371,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				1F36E9F42D271542009D2336 /* PBXTargetDependency */,
 			);
 			name = PTHotKey.framework;
 			productName = PTHotKey;
@@ -461,6 +482,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1F36E9F42D271542009D2336 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9398377F0DA42965007F53F3 /* ShortcutRecorder.framework */;
+			targetProxy = 1F36E9F32D271542009D2336 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E2741AC31673C79F00A139BD /* ShortcutRecorder.strings */ = {
