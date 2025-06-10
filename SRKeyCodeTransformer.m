@@ -317,9 +317,8 @@ FOUNDATION_STATIC_INLINE NSString* _SRUnicharToString(unichar aChar)
 
     const UCKeyboardLayout *keyLayout = (const UCKeyboardLayout *)CFDataGetBytePtr(layoutData);
 
-    static const UniCharCount MaxLength = 255;
     UniCharCount actualLength = 0;
-    UniChar chars[MaxLength] = {0};
+    UniChar chars[255] = {0};
 
     UInt32 deadKeyState = 0;
     OSStatus err = UCKeyTranslate(keyLayout,
