@@ -115,6 +115,7 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
     NSMutableDictionary *_bindingInfo;
    
    BOOL _shouldDrawBackground;
+   BOOL _isEnabled;
 }
 
 - (instancetype)initWithFrame:(NSRect)aFrameRect
@@ -129,6 +130,7 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
         _drawsASCIIEquivalentOfShortcut = YES;
         _allowsEscapeToCancelRecording = YES;
         _allowsDeleteToClearShortcutAndEndRecording = YES;
+        _isEnabled = YES;
         _mouseTrackingButtonTag = _SRRecorderControlInvalidButtonTag;
         _snapBackButtonToolTipTag = NSIntegerMax;
         _bindingInfo = [NSMutableDictionary dictionary];
@@ -210,12 +212,22 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
     }
 }
 
+- (void)setIsEnabled:(BOOL)isEnabled
+{
+   _isEnabled = isEnabled;
+   [self setNeedsDisplay:YES];
+}
+
+-(BOOL)isEnabled
+{
+   return _isEnabled;
+}
 
 #pragma mark Methods
 
 - (BOOL)beginRecording
 {
-    if (self.isRecording)
+    if (self.isRecording || !self.isEnabled)
         return YES;
 
     [self setNeedsDisplay:YES];
@@ -541,10 +553,12 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
     CGFloat corner = frame.size.height / 2;
     frame = NSInsetRect(frame, 1, 1);
    
+    CGFloat opacity = self.isEnabled ? 1 : 0.5;
+   
     NSBezierPath* path = [NSBezierPath bezierPathWithRoundedRect:frame xRadius:corner yRadius:corner];
     path.lineWidth = 1;
-    [[NSColor controlColor] setFill];
-    [[NSColor grayColor] setStroke];
+    [[[NSColor controlColor] colorWithAlphaComponent:opacity] setFill];
+    [[[NSColor grayColor] colorWithAlphaComponent:opacity] setStroke];
     [path fill];
     [path stroke];
 
@@ -760,6 +774,11 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
 
 - (void)accessibilityPerformAction:(NSString *)anAction
 {
+    if (!self.isEnabled)
+    {
+       return;
+    }
+   
     if ([anAction isEqualToString:NSAccessibilityPressAction])
         [self beginRecording];
     else if (self.isRecording && [anAction isEqualToString:NSAccessibilityCancelAction])
@@ -898,7 +917,7 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
 
 - (void)drawFocusRingMask
 {
-    if (self.window.firstResponder == self)
+    if (self.window.firstResponder == self && self.isEnabled)
         [self.controlShape fill];
 }
 
@@ -1058,6 +1077,11 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
 
 - (void)mouseDown:(NSEvent *)anEvent
 {
+    if (!self.isEnabled)
+    {
+       return;
+    }
+   
     NSPoint locationInView = [self convertPoint:anEvent.locationInWindow fromView:nil];
 
     if (self.isRecording)
@@ -1123,6 +1147,11 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
 
 - (void)mouseEntered:(NSEvent *)anEvent
 {
+   if (!self.isEnabled)
+   {
+      return;
+   }
+   
    if (_borderlessButton)
    {
       _shouldDrawBackground = YES;
@@ -1141,6 +1170,11 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
 
 - (void)mouseExited:(NSEvent *)anEvent
 {
+   if (self.isEnabled)
+   {
+      return;
+   }
+   
    if (_borderlessButton)
    {
       _shouldDrawBackground = NO;
@@ -1165,7 +1199,7 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
 
 - (BOOL)performKeyEquivalent:(NSEvent *)anEvent
 {
-    if (self.window.firstResponder != self)
+    if (self.window.firstResponder != self || !self.isEnabled)
         return NO;
 
     if (_mouseTrackingButtonTag != _SRRecorderControlInvalidButtonTag)

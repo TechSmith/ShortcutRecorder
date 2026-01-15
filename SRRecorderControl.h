@@ -122,6 +122,8 @@ extern NSString *const SRShortcutCharactersIgnoringModifiers;
  */
 @property BOOL allowsDeleteToClearShortcutAndEndRecording;
 
+@property BOOL isEnabled;
+
 /*!
     @brief  Determines whether recording is in process.
  */
