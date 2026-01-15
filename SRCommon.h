@@ -109,10 +109,7 @@ FOUNDATION_STATIC_INLINE NSImage *SRImage(NSString *anImageName)
 #else
     NSBundle *b = [NSBundle bundleWithIdentifier:@"com.kulakov.ShortcutRecorder"];
 
-    if (floor(NSAppKitVersionNumber) <= NSAppKitVersionNumber10_6)
-        return [[NSImage alloc] initByReferencingURL:[b URLForImageResource:anImageName]];
-    else
-        return [b imageForResource:anImageName];
+   return [b imageForResource:anImageName];
 #endif
 }
 
