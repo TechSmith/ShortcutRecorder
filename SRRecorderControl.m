@@ -115,6 +115,7 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
     NSMutableDictionary *_bindingInfo;
    
    BOOL _shouldDrawBackground;
+   BOOL _isEnabled;
 }
 
 - (instancetype)initWithFrame:(NSRect)aFrameRect
@@ -129,25 +130,23 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
         _drawsASCIIEquivalentOfShortcut = YES;
         _allowsEscapeToCancelRecording = YES;
         _allowsDeleteToClearShortcutAndEndRecording = YES;
+        _isEnabled = YES;
         _mouseTrackingButtonTag = _SRRecorderControlInvalidButtonTag;
         _snapBackButtonToolTipTag = NSIntegerMax;
         _bindingInfo = [NSMutableDictionary dictionary];
         _fontSize = 12.0;
 
-        if (floor(NSAppKitVersionNumber) > NSAppKitVersionNumber10_6)
-        {
-            self.translatesAutoresizingMaskIntoConstraints = NO;
-
-            [self setContentHuggingPriority:NSLayoutPriorityDefaultLow
-                             forOrientation:NSLayoutConstraintOrientationHorizontal];
-            [self setContentHuggingPriority:NSLayoutPriorityRequired
-                             forOrientation:NSLayoutConstraintOrientationVertical];
-
-            [self setContentCompressionResistancePriority:NSLayoutPriorityDefaultLow
-                                           forOrientation:NSLayoutConstraintOrientationHorizontal];
-            [self setContentCompressionResistancePriority:NSLayoutPriorityRequired
-                                           forOrientation:NSLayoutConstraintOrientationVertical];
-        }
+       self.translatesAutoresizingMaskIntoConstraints = NO;
+       
+       [self setContentHuggingPriority:NSLayoutPriorityDefaultLow
+                        forOrientation:NSLayoutConstraintOrientationHorizontal];
+       [self setContentHuggingPriority:NSLayoutPriorityRequired
+                        forOrientation:NSLayoutConstraintOrientationVertical];
+       
+       [self setContentCompressionResistancePriority:NSLayoutPriorityDefaultLow
+                                      forOrientation:NSLayoutConstraintOrientationHorizontal];
+       [self setContentCompressionResistancePriority:NSLayoutPriorityRequired
+                                      forOrientation:NSLayoutConstraintOrientationVertical];
 
        NSString* sgwaesf = NSLocalizedStringFromTableInBundle(@"+ Shortcut",
                                                               @"ShortcutRecorder",
@@ -210,12 +209,22 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
     }
 }
 
+- (void)setIsEnabled:(BOOL)isEnabled
+{
+   _isEnabled = isEnabled;
+   [self setNeedsDisplay:YES];
+}
+
+-(BOOL)isEnabled
+{
+   return _isEnabled;
+}
 
 #pragma mark Methods
 
 - (BOOL)beginRecording
 {
-    if (self.isRecording)
+    if (self.isRecording || !self.isEnabled)
         return YES;
 
     [self setNeedsDisplay:YES];
@@ -541,10 +550,12 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
     CGFloat corner = frame.size.height / 2;
     frame = NSInsetRect(frame, 1, 1);
    
+    CGFloat opacity = self.isEnabled ? 1 : 0.5;
+   
     NSBezierPath* path = [NSBezierPath bezierPathWithRoundedRect:frame xRadius:corner yRadius:corner];
     path.lineWidth = 1;
-    [[NSColor controlColor] setFill];
-    [[NSColor grayColor] setStroke];
+    [[[NSColor controlColor] colorWithAlphaComponent:opacity] setFill];
+    [[[NSColor grayColor] colorWithAlphaComponent:opacity] setStroke];
     [path fill];
     [path stroke];
 
@@ -760,6 +771,11 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
 
 - (void)accessibilityPerformAction:(NSString *)anAction
 {
+    if (!self.isEnabled)
+    {
+       return;
+    }
+   
     if ([anAction isEqualToString:NSAccessibilityPressAction])
         [self beginRecording];
     else if (self.isRecording && [anAction isEqualToString:NSAccessibilityCancelAction])
@@ -823,10 +839,7 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
 
         if (valueBindingInfo)
         {
-            if (floor(NSAppKitVersionNumber) <= NSAppKitVersionNumber10_6)
-                [valueBindingInfo[NSObservedObjectKey] removeObserver:self forKeyPath:valueBindingInfo[NSObservedKeyPathKey]];
-            else
-                [valueBindingInfo[NSObservedObjectKey] removeObserver:self forKeyPath:valueBindingInfo[NSObservedKeyPathKey] context:&_SRValueObservationContext];
+            [valueBindingInfo[NSObservedObjectKey] removeObserver:self forKeyPath:valueBindingInfo[NSObservedKeyPathKey] context:&_SRValueObservationContext];
 
             [_bindingInfo removeObjectForKey:NSValueBinding];
         }
@@ -883,22 +896,11 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
    }
    
     [self drawInterior:aDirtyRect];
-
-    if (floor(NSAppKitVersionNumber) <= NSAppKitVersionNumber10_6)
-    {
-        if (self.window.firstResponder == self)
-        {
-            [NSGraphicsContext saveGraphicsState];
-            NSSetFocusRingStyle(NSFocusRingOnly);
-            [self.controlShape fill];
-            [NSGraphicsContext restoreGraphicsState];
-        }
-    }
 }
 
 - (void)drawFocusRingMask
 {
-    if (self.window.firstResponder == self)
+    if (self.window.firstResponder == self && self.isEnabled)
         [self.controlShape fill];
 }
 
@@ -912,7 +914,7 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
 
 - (NSEdgeInsets)alignmentRectInsets
 {
-    if (floor(NSAppKitVersionNumber) <= NSAppKitVersionNumber10_6 || self.window == nil)
+    if (self.window == nil)
         return NSEdgeInsetsMake(0.0, 0.0, _SRRecorderControlBottomShadowHeightInPixels, 0.0);
     else
         return NSEdgeInsetsMake(0.0, 0.0, _SRRecorderControlBottomShadowHeightInPixels / self.window.backingScaleFactor, 0.0);
@@ -1021,19 +1023,8 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
     return YES;
 }
 
-- (BOOL)becomeFirstResponder
-{
-    if (floor(NSAppKitVersionNumber) <= NSAppKitVersionNumber10_6)
-        [self setKeyboardFocusRingNeedsDisplayInRect:self.bounds];
-
-    return [super becomeFirstResponder];
-}
-
 - (BOOL)resignFirstResponder
 {
-    if (floor(NSAppKitVersionNumber) <= NSAppKitVersionNumber10_6)
-        [self setKeyboardFocusRingNeedsDisplayInRect:self.bounds];
-
     [self endRecording];
     _mouseTrackingButtonTag = _SRRecorderControlInvalidButtonTag;
     return [super resignFirstResponder];
@@ -1058,6 +1049,11 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
 
 - (void)mouseDown:(NSEvent *)anEvent
 {
+    if (!self.isEnabled)
+    {
+       return;
+    }
+   
     NSPoint locationInView = [self convertPoint:anEvent.locationInWindow fromView:nil];
 
     if (self.isRecording)
@@ -1123,6 +1119,11 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
 
 - (void)mouseEntered:(NSEvent *)anEvent
 {
+   if (!self.isEnabled)
+   {
+      return;
+   }
+   
    if (_borderlessButton)
    {
       _shouldDrawBackground = YES;
@@ -1141,6 +1142,11 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
 
 - (void)mouseExited:(NSEvent *)anEvent
 {
+   if (self.isEnabled)
+   {
+      return;
+   }
+   
    if (_borderlessButton)
    {
       _shouldDrawBackground = NO;
@@ -1165,7 +1171,7 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
 
 - (BOOL)performKeyEquivalent:(NSEvent *)anEvent
 {
-    if (self.window.firstResponder != self)
+    if (self.window.firstResponder != self || !self.isEnabled)
         return NO;
 
     if (_mouseTrackingButtonTag != _SRRecorderControlInvalidButtonTag)
