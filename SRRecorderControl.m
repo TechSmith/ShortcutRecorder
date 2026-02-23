@@ -554,8 +554,11 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
    
     NSBezierPath* path = [NSBezierPath bezierPathWithRoundedRect:frame xRadius:corner yRadius:corner];
     path.lineWidth = 1;
-    [[[NSColor controlColor] colorWithAlphaComponent:opacity] setFill];
-    [[[NSColor grayColor] colorWithAlphaComponent:opacity] setStroke];
+   
+    CGContextSetAlpha(NSGraphicsContext.currentContext.CGContext, opacity);
+   
+    [[NSColor controlColor] setFill];
+    [[NSColor grayColor] setStroke];
     [path fill];
     [path stroke];
 
