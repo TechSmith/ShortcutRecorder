@@ -557,8 +557,11 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
    
     CGContextSetAlpha(NSGraphicsContext.currentContext.CGContext, opacity);
    
-    [[NSColor controlColor] setFill];
-    [[NSColor grayColor] setStroke];
+    NSColor* background = self.backgroundColor ?: NSColor.controlColor;
+    NSColor* border = self.borderColor ?: NSColor.grayColor;
+   
+    [background setFill];
+    [border setStroke];
     [path fill];
     [path stroke];
 
