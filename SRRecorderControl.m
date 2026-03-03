@@ -548,6 +548,10 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
     NSRect frame = self.bounds;
     frame.size.height = _SRRecorderControlHeight;
     CGFloat corner = frame.size.height / 2;
+    if (self.cornerRadius != nil)
+    {
+       corner = self.cornerRadius.floatValue;
+    }
     frame = NSInsetRect(frame, 1, 1);
    
     CGFloat opacity = self.isEnabled ? 1 : 0.5;
@@ -557,8 +561,11 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
    
     CGContextSetAlpha(NSGraphicsContext.currentContext.CGContext, opacity);
    
-    [[NSColor controlColor] setFill];
-    [[NSColor grayColor] setStroke];
+    NSColor* background = self.backgroundColor ?: NSColor.controlColor;
+    NSColor* border = self.borderColor ?: NSColor.grayColor;
+   
+    [background setFill];
+    [border setStroke];
     [path fill];
     [path stroke];
 

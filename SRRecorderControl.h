@@ -136,6 +136,12 @@ extern NSString *const SRShortcutCharactersIgnoringModifiers;
 
 @property (nonatomic, copy) NSColor* labelColor;
 
+@property (nonatomic, copy) NSColor* backgroundColor;
+
+@property (nonatomic, copy) NSColor* borderColor;
+
+@property NSNumber* cornerRadius;
+
 @property BOOL borderlessButton;
 
 @property float fontSize;
