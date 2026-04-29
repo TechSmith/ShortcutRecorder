@@ -412,7 +412,7 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
        label = self.stringValue;
        
        if (![label length])
-          label = NSLocalizedStringFromTableInBundle(@"+ Shortcut",
+          label = self.placeholderText ?: NSLocalizedStringFromTableInBundle(@"+ Shortcut",
                                                      @"ShortcutRecorder",
                                                      [NSBundle bundleWithIdentifier:SRBundleIdentifier],
                                                      nil);
@@ -943,10 +943,11 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
 
 - (NSSize)intrinsicContentSize
 {
-   return NSMakeSize(NSWidth([self rectForLabel:NSLocalizedStringFromTableInBundle(@"+ Shortcut",
-                                                                                   @"ShortcutRecorder",
-                                                                                   [NSBundle bundleWithIdentifier:SRBundleIdentifier],
-                                                                                   nil) withAttributes:self.normalLabelAttributes]) + _SRRecorderControlShapeXRadius + _SRRecorderControlShapeXRadius,
+   NSString* label = self.placeholderText ?: NSLocalizedStringFromTableInBundle(@"+ Shortcut",
+                                                                                @"ShortcutRecorder",
+                                                                                [NSBundle bundleWithIdentifier:SRBundleIdentifier],
+                                                                                nil);
+   return NSMakeSize(NSWidth([self rectForLabel:label withAttributes:self.normalLabelAttributes]) + _SRRecorderControlShapeXRadius + _SRRecorderControlShapeXRadius,
                       _SRRecorderControlHeight);
 }
 

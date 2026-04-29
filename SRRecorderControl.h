@@ -140,6 +140,8 @@ extern NSString *const SRShortcutCharactersIgnoringModifiers;
 
 @property (nonatomic, copy) NSColor* borderColor;
 
+@property (nonatomic, copy) NSString* placeholderText;
+
 @property NSNumber* cornerRadius;
 
 @property BOOL borderlessButton;
