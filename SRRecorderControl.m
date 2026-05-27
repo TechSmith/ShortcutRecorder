@@ -441,7 +441,7 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
         label = self.accessibilityStringValue;
 
         if (![label length])
-           label = NSLocalizedStringFromTableInBundle(@"+ Shortcut",
+           label = self.placeholderText ?: NSLocalizedStringFromTableInBundle(@"+ Shortcut",
                                                       @"ShortcutRecorder",
                                                       [NSBundle bundleWithIdentifier:SRBundleIdentifier],
                                                       nil);
