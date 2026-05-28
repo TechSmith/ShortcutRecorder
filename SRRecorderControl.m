@@ -412,13 +412,22 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
        label = self.stringValue;
        
        if (![label length])
-          label = NSLocalizedStringFromTableInBundle(@"+ Shortcut",
-                                                     @"ShortcutRecorder",
-                                                     [NSBundle bundleWithIdentifier:SRBundleIdentifier],
-                                                     nil);
+          label = [self placeholderLabel];
     }
    
    return label;
+}
+
+- (NSString *)placeholderLabel
+{
+   if (self.placeholderText.length > 0)
+   {
+      return self.placeholderText;
+   }
+   return NSLocalizedStringFromTableInBundle(@"+ Shortcut",
+                                             @"ShortcutRecorder",
+                                             [NSBundle bundleWithIdentifier:SRBundleIdentifier],
+                                             nil);
 }
 
 - (NSString *)accessibilityLabel
@@ -441,10 +450,7 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
         label = self.accessibilityStringValue;
 
         if (![label length])
-           label = NSLocalizedStringFromTableInBundle(@"+ Shortcut",
-                                                      @"ShortcutRecorder",
-                                                      [NSBundle bundleWithIdentifier:SRBundleIdentifier],
-                                                      nil);
+           label = [self placeholderLabel];
     }
 
     return label;
@@ -943,10 +949,8 @@ static NSValueTransformer *_SRValueTransformerFromBindingOptions(NSDictionary *a
 
 - (NSSize)intrinsicContentSize
 {
-   return NSMakeSize(NSWidth([self rectForLabel:NSLocalizedStringFromTableInBundle(@"+ Shortcut",
-                                                                                   @"ShortcutRecorder",
-                                                                                   [NSBundle bundleWithIdentifier:SRBundleIdentifier],
-                                                                                   nil) withAttributes:self.normalLabelAttributes]) + _SRRecorderControlShapeXRadius + _SRRecorderControlShapeXRadius,
+   NSString* label = [self placeholderLabel];
+   return NSMakeSize(NSWidth([self rectForLabel:label withAttributes:self.normalLabelAttributes]) + _SRRecorderControlShapeXRadius + _SRRecorderControlShapeXRadius,
                       _SRRecorderControlHeight);
 }
 
