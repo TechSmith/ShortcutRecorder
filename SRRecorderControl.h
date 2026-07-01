@@ -142,7 +142,7 @@ extern NSString *const SRShortcutCharactersIgnoringModifiers;
 
 @property (nonatomic, copy) NSString* placeholderText;
 
-@property NSNumber* cornerRadius;
+@property (nonatomic, copy) NSNumber* cornerRadius;
 
 @property BOOL borderlessButton;
 
